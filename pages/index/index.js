@@ -56,9 +56,9 @@ Page({
       path: 'path' // 分享路径
     }
   },
-  gotoList:function(e){
+  gotoSearch:function(e){
     wx.navigateTo({
-      url: '../list/list?id='+e.currentTarget.dataset.id
+      url: '../search/search'
     })
   }
 })

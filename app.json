@@ -4,7 +4,7 @@
     "pages/label/label",
     "pages/album/album",
     "pages/me/me",
-    "pages/list/list",
+    "pages/search/search",
     "pages/logs/logs",
     "pages/pic/pic"
   ],
