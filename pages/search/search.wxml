@@ -17,4 +17,5 @@
       <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
       <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view></view>
     </view>
+    <view style='height:80rpx;'></view>
 </view>
