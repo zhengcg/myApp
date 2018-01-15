@@ -3,6 +3,7 @@
 var app = getApp()
 Page({
   data:{
+    imgUrls:[{src:"../../images/skin/01.jpg",id:1}],
     labels:[
       {id:1,text:'html5'},
       {id:2,text:'javascript'},
