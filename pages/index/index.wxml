@@ -1,13 +1,39 @@
-<!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <view class="head">
+      <view class="headIcon">
+        <image src="../../images/my-head.png"></image>
+      </view>
+      <view class="zym">
+      <text>庙小妖风大，池浅王八多,地方法规个梵蒂冈梵蒂冈梵蒂冈发的话放到换个话题任何人</text>
+      <view>—— 郑春光</view>
+      </view>
+    </view>
+    <view class="panel">
+      <view class="panel-head">博文分类</view>
+      <scroll-view class="panel-body label" scroll-y="true" style="max-height: 240rpx;">
+        <text wx:for="{{labels}}" bindtap="gotoList" data-id="{{item.id}}" wx:key="item.id">{{item.text}}</text>
+      </scroll-view>
+    </view>
+
+    <view class="panel">
+      <view class="panel-head" bindtap="gotoList" data-id='0'>最新发表<image src="../../images/icon/common-scroll.png"></image></view>
+      <view class="panel-body listBox">
+        <view class="list">
+          1、这是一条关于xxx的逼问就撒登记卡收到客户反馈回访束带结发打扫房间斯柯达
+        </view>
+        <view class="list">
+          2、这是一条关于xxx的逼问就撒登记卡收到客户反馈回访束带结发打扫房间斯柯达
+        </view>
+        <view class="list">
+          3、这是一条关于xxx的逼问就撒登记卡收到客户反馈回访束带结发打扫房间斯柯达
+        </view>
+        <view class="list">
+          4、这是一条关于xxx的逼问就撒登记卡收到客户反馈回访束带结发打扫房间斯柯达
+        </view>
+        <view class="list">
+          5、这是一条关于xxx的逼问就撒登记卡收到客户反馈回访束带结发打扫房间斯柯达
+        </view>
+        
+      </view>
+    </view>
 </view>

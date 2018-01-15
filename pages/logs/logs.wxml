@@ -1,6 +1,8 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container">
+  <view class="blogH">好客山东开始疯狂送大家疯狂三等分</view>
+  <view class="datatime"><text>作者：郑春光</text><text>日期：2017-06-06</text></view>
+  <view class="blogC">
+    <view>http://www.52jbj.com/jbdq/571687.html</view>
+    查看我的回复看完后方可温和罚款未回复看完回复开完会v看女女和鸡肤鹤发
+  </view>
 </view>
