@@ -5,22 +5,22 @@
     "pages/album/album",
     "pages/me/me",
     "pages/list/list",
-     "pages/logs/logs",
-     "pages/pic/pic"
+    "pages/logs/logs",
+    "pages/pic/pic"
   ],
   "window":{
-    "navigationBarBackgroundColor": "#52cac3",
+    "navigationBarBackgroundColor": "#FF6262",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "我的博客",
+    "navigationBarTitleText": "商家小屋",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
 
   },
   "tabBar": {
-    "color":"#999999",
-    "selectedColor":"#52cac3",
-    "backgroundColor":"#f2f2f2",
-    "borderStyle":"#cccccc",
+    "color":"#666",
+    "selectedColor":"#FF6262",
+    "backgroundColor":"#fff",
+    "borderStyle":"#DFDFDF",
 
     "list": [
       {
@@ -31,19 +31,13 @@
     },
     {
       "pagePath": "pages/label/label",
-      "text": "留言",
+      "text": "制作中心",
       "iconPath": "./images/icon/label.png",
       "selectedIconPath": "./images/icon/labelS.png"
     },
     {
-      "pagePath": "pages/album/album",
-      "text": "相册",
-      "iconPath": "./images/icon/album.png",
-      "selectedIconPath": "./images/icon/albumS.png"
-    },
-    {
       "pagePath": "pages/me/me",
-      "text": "关于我",
+      "text": "用户中心",
       "iconPath": "./images/icon/me.png",
       "selectedIconPath": "./images/icon/meS.png"
     }    

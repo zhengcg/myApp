@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="albumList">
+    <view class="listL" wx:for="{{albums}}" wx:key="index" data-id="{{item.id}}" bindtap="gotoPic">
+      <image src="{{item.src}}"></image>
+      <view class="title">{{item.title}}</view>
+    </view>
+  </view>
+</view>

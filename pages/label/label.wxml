@@ -1,0 +1,38 @@
+<view class="container">
+ <view class="section">
+ <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="留下你对我想说的吧" name="textarea"/>
+    <button form-type="submit" type="primary"> 提交 </button>
+</form>
+</view>
+<view class="leave">
+  <view class="leaveList">
+    <view class="headImg">
+      <image src="../../images/my-head.png"></image>
+    </view>
+    <view class="leaveMessage">
+      <view class="title"><text>张三</text><text>2017-06-07 16:06</text></view>
+      <text>还上课厚大司考电话客服加快速度福建省快递费很快都会开始疯狂打扫房间独守空房几点开始福建省看到价格空间公开结果看到房间观看的房间打开几个快递放假</text>
+    </view>
+  </view>
+  <view class="leaveList">
+    <view class="headImg">
+      <image src="../../images/my-head.png"></image>
+    </view>
+    <view class="leaveMessage">
+      <view class="title"><text>张三</text><text>2017-06-07 16:06</text></view>
+      <text>还上课厚大司考电话客服加快速度福建省快递费很快都会开始疯狂打扫房间独</text>
+    </view>
+  </view>
+  <view class="leaveList">
+    <view class="headImg">
+      <image src="../../images/my-head.png"></image>
+    </view>
+    <view class="leaveMessage">
+      <view class="title"><text>张三</text><text>2017-06-07 16:06</text></view>
+      <text>还上课厚大司考电话客</text>
+    </view>
+  </view>
+
+</view>
+</view>

@@ -1,0 +1,8 @@
+
+<view class="container">
+  <view class="albumList">
+    <view class="listL" wx:for="{{pics}}" wx:key="index" data-index="{{index}}" bindtap="previewImage">
+      <image src="{{item}}" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>

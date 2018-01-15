@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="head">
+    <view class="headBox">
+      <image src="../../images/my-head.png"></image>
+      <view class="name">郑春光</view>
+      <view class="info"><text>男</text><text>27岁</text><text>北京</text></view>
+    </view>
+    <view class="baseBox">
+      <view><text>生日：</text>1989-09-10</view>
+      <view><text>职业：</text>web前端开发</view>
+      <view><text>学历：</text>本科</view>
+      <view><text>学校：</text>南昌大学</view>
+      <view><text>电话：</text>18910232146</view>
+      <view><text>邮箱：</text>1083466294@qq.com</view>
+      <view><text>微信：</text>1083466294</view>
+    </view> 
+  </view>
+  <view class="panel">
+      <view class="panel-head">自我描述</view>
+      <view class="panel-body">
+        <text>我热爱web前端开发这项工作，并希望能在该路上走的更远，希望加入一个优秀的团队，结交更多志同道合的朋友，学习更多的技巧，积累更多的经验，奉献出更多的属于自己的优秀作品。</text>
+        
+      </view>
+  </view>
+  <view class="panel">
+      <view class="panel-head">格言</view>
+      <view class="panel-body">
+        <view><text>与其临渊羡鱼，不如退而结网</text></view>
+        <view><text>谦虚使人进步</text></view>
+        
+      </view>
+  </view>
+  <view class="panel">
+      <view class="panel-head">技能自评</view>
+      <view class="panel-body">
+
+        <view class="progress">
+          <view class="proName">css</view>
+          <view class="proBar">
+            <progress percent="60" show-info="true" activeColor="#52cac3" />
+          </view>
+        </view> 
+        <view class="progress">
+          <view class="proName">javascript</view>
+          <view class="proBar">
+            <progress percent="30" show-info="true" activeColor="#52cac3" />
+          </view>
+        </view> 
+        <view class="progress">
+          <view class="proName">node</view>
+          <view class="proBar">
+            <progress percent="90" show-info="true" activeColor="#52cac3" />
+          </view>
+        </view> 
+        <view class="progress">
+          <view class="proName">jQuery</view>
+          <view class="proBar">
+            <progress percent="60" show-info="true" activeColor="#52cac3" />
+          </view>
+        </view> 
+
+      </view>
+  </view>
+</view>
