@@ -1,0 +1,30 @@
+<view class="container">
+  <scroll-view class="nav" scroll-x="true">
+          <text class='cur'>全部</text>
+          <text>疯狂砍价</text>
+          <text>集赞活动</text>
+          <text>助力活动</text>
+          <text>疯狂砍价</text>
+          <text>抽奖精彩</text>
+          <text>全部</text>
+          <text>疯狂砍价</text>
+          <text>集赞活动</text>
+          <text>全部</text>
+          <text>疯狂砍价</text>
+          <text>集赞活动</text>
+  </scroll-view>
+ 
+  <view class='labelBox'>请根据您的活动需求选择活动模板</view>
+   <view style='height:140rpx;'></view>
+  <view class='proBox'>
+  <view class='proList'>
+  </view>
+  <view class='proList'>
+  </view>
+  <view class='proList'>
+  </view>
+  <view class='proList'>
+  </view>
+  </view>
+  
+</view>

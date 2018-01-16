@@ -1,7 +1,8 @@
 {
   "pages":[   
+    "pages/product/product",
     "pages/index/index",
-    "pages/label/label",
+    
     "pages/album/album",
     "pages/me/me",
     "pages/search/search",
@@ -30,7 +31,7 @@
       "selectedIconPath": "./images/icon/indexS.png"
     },
     {
-      "pagePath": "pages/label/label",
+      "pagePath": "pages/product/product",
       "text": "制作中心",
       "iconPath": "./images/icon/label.png",
       "selectedIconPath": "./images/icon/labelS.png"

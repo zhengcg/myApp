@@ -4,6 +4,13 @@
   color: #666;
   background: #F3F3F3;
 } 
+.clearfix::after{
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  zoom: 1;
+}
 .panel{
   width: 720rpx;
   margin: 20rpx auto;

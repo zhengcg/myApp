@@ -2,7 +2,7 @@
     <view style='background:#fff;padding:12rpx 0'>
         <view class='searchBox' bindtap='gotoSearch'>
               <view class='btnBox'>
-              <icon type="search" size='14' color='#7E7E80'/> 搜索
+              搜索
               </view>
         </view>
     </view>

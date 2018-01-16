@@ -15,8 +15,5 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  },
-  bindFormSubmit: function(e) {
-      console.log(e.detail.value.textarea)
-    }
+  }
 })
