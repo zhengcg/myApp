@@ -34,5 +34,4 @@
   <view class='meList'> 
     <view class='con'><image src='../../images/icon/icon07.png'/><text>意见反馈</text></view>
   </view>
-  <view style='height:120rpx;'></view>
 </view>

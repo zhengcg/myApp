@@ -1,10 +1,10 @@
 {
   "pages":[   
-    "pages/me/me",
+    "pages/feedback/feedback",
     "pages/index/index",
     "pages/product/product",
     "pages/album/album",
-   
+    "pages/me/me",
     "pages/search/search",
     "pages/logs/logs",
     "pages/pic/pic"

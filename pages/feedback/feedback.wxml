@@ -1,0 +1,12 @@
+<view class="container">
+<view class='textareaBox'>
+<textarea placeholder="自动变高" />
+</view>
+<view class='inputBox'>
+<input placeholder="请填写手机号码" type='number'/>
+</view>
+<view class='btnBox'>
+<button type="primary"> 提交 </button>
+</view>
+
+</view>
