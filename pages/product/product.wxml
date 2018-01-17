@@ -5,25 +5,28 @@
           <text>集赞活动</text>
           <text>助力活动</text>
           <text>疯狂砍价</text>
-          <text>抽奖精彩</text>
-          <text>全部</text>
-          <text>疯狂砍价</text>
-          <text>集赞活动</text>
-          <text>全部</text>
-          <text>疯狂砍价</text>
-          <text>集赞活动</text>
   </scroll-view>
  
   <view class='labelBox'>请根据您的活动需求选择活动模板</view>
    <view style='height:140rpx;'></view>
-  <view class='proBox'>
+  <view class='proBox clearfix'>
   <view class='proList'>
+    <view><image src="../../images/my-head.png"/></view>
+    <view class='tit clearfix'><text>疯狂砍价</text><view>多风格型</view></view>
+    <view class='con'>
+    第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
+    </view>
+    <button type="default" class='defaultBtn btn'>查看示例</button>
+    <button type="primary" class='primaryBtn btn'>马上制作</button>
   </view>
   <view class='proList'>
-  </view>
-  <view class='proList'>
-  </view>
-  <view class='proList'>
+    <view><image src="../../images/my-head.png"/></view>
+    <view class='tit clearfix'><text>疯狂砍价</text><view>多风格型</view></view>
+    <view class='con'>
+    第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
+    </view>
+    <button type="default" class='defaultBtn btn'>查看示例</button>
+    <button type="primary" class='primaryBtn btn'>马上制作</button>
   </view>
   </view>
   
