@@ -1,13 +1,10 @@
 {
-  "pages":[   
-    "pages/feedback/feedback",
+  "pages":[ 
     "pages/index/index",
+    "pages/feedback/feedback",
     "pages/product/product",
-    "pages/album/album",
     "pages/me/me",
-    "pages/search/search",
-    "pages/logs/logs",
-    "pages/pic/pic"
+    "pages/search/search"
   ],
   "window":{
     "navigationBarBackgroundColor": "#FF6262",

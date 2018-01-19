@@ -1,5 +1,0 @@
-
-.albumList{display: flex;align-items:stretch;flex-wrap:wrap;align-content:space-between;justify-content:space-around;padding: 30rpx;}
-.albumList .listL{width: 280rpx;height: 280rpx;margin: 30rpx 0;flex-basis:center;position: relative}
-.albumList .listL image{width: 280rpx;height: 280rpx;}
-.albumList .listL .title{position: absolute;width: 280rpx;height: 50rpx;line-height: 50rpx;text-align: center;bottom: 0;left: 0;background: rgba(0, 0, 0, 0.5);color: #fff;font-size: 24rpx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
