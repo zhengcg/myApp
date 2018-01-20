@@ -1,0 +1,44 @@
+<view class='container'>
+  <view class='searchBox'>
+    <view class='searchDiv clearfix'>
+      <view class='iconS'></view>
+        <input placeholder="输入关键字" type='text'/>
+      <view class='btnS'>搜索</view>
+    </view>
+  </view>
+  <view class='orderNav clearfix'>
+    <view><text class='active'>全部</text></view>
+    <view><text>进行中</text></view>
+    <view><text>已结束</text></view>
+  </view>
+  <view class='orderList'>
+    <view class='orderHead'>
+      <view>的三国杀官方对方的好地方恢复恢复光滑方恢复恢复光滑</view>
+      <text>进行中</text>
+    </view>
+    <view class='orderBody'>
+      <image src="../../images/skin/01.jpg"/>
+    </view>
+    <view class='orderFoot'>
+      <text class='f1'>报名表</text>
+      <text class='f2'>编辑</text>
+      <text class='f3'>二维码</text>
+      <text class='f4'>删除活动</text>
+    </view>
+  </view>
+  <view class='orderList'>
+    <view class='orderHead'>
+      <view>的三国杀官方对方的好地方恢复恢复光滑方恢复恢复光滑</view>
+      <text>进行中</text>
+    </view>
+    <view class='orderBody'>
+      <image src="../../images/skin/01.jpg"/>
+    </view>
+    <view class='orderFoot'>
+      <text class='f1'>报名表</text>
+      <text class='f2'>编辑</text>
+      <text class='f3'>二维码</text>
+      <text class='f4'>删除活动</text>
+    </view>
+  </view>
+</view>

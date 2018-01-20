@@ -1,0 +1,15 @@
+/* pages/getStart/getStart.wxss */
+.startTit{
+  font-size: 40rpx;
+  display: inline-block;
+  margin: 40rpx auto;
+  background: #0067BD;
+  padding: 10rpx 30rpx;
+  color: #fff;
+}
+.startCon{
+  text-align: left;
+  font-size: 30rpx;
+  color: #222;
+  padding: 30rpx 0;
+}

@@ -6,6 +6,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
+
   },
   onShow:function(){
     // 页面显示
@@ -15,5 +16,30 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  gotoFeed:function(){
+    wx.navigateTo({
+      url: '../feedback/feedback'
+    })
+  },
+  gotoRaider:function(){
+    wx.navigateTo({
+      url: '../raiders/raiders'
+    })
+  },
+  gotoPro: function () {
+    wx.navigateTo({
+      url: '../problem/problem'
+    })
+  },
+  gotoStart: function () {
+    wx.navigateTo({
+      url: '../getStart/getStart'
+    })
+  },
+  gotoOrder: function () {
+    wx.navigateTo({
+      url: '../order/order'
+    })
   }
 })

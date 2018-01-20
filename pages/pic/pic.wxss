@@ -1,3 +1,0 @@
-.albumList{display: flex;align-items:stretch;flex-wrap:wrap;align-content:space-between;justify-content:space-around;padding: 30rpx;}
-.albumList .listL{width: 280rpx;height: 280rpx;margin: 30rpx 0;flex-basis:center;position: relative;background: #eee;}
-.albumList .listL image{display: block;margin: 0 auto;max-height: 280rpx;width: auto}

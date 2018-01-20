@@ -1,0 +1,18 @@
+.raiderTit{
+  padding-top: 30rpx;
+  color: #333;
+  font-size: 50rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.raiderDate{
+  color: #999;
+  line-height: 40rpx;
+  padding:0 20rpx;
+  margin-bottom: 30rpx;
+  margin-top:15rpx;
+}
+.raiderCon{
+  padding: 0 20rpx;
+  font-size: 30rpx;
+}

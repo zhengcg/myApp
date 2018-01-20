@@ -1,0 +1,20 @@
+.textareaBox{
+  padding:26rpx 40rpx;
+  background: #fff;
+  margin-bottom: 8rpx;
+}
+.inputBox{
+  padding: 0 40rpx;
+  background: #fff;
+  margin-bottom: 60rpx;
+}
+.inputBox input{
+  height: 100rpx;
+}
+.btnBox{
+  width: 614rpx;
+  margin: 0 auto;
+}
+.btnBox button{
+  background: #FF6262;
+}

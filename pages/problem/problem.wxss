@@ -1,0 +1,15 @@
+/* pages/problem/problem.wxss */
+.proTit{
+  background: #0067BD;
+  height: 72rpx;
+  line-height: 72rpx;
+  color: #FFFFFF;
+  display: inline-block;
+  padding-left: 22rpx;
+  padding-right: 58rpx;
+}
+.proCon{
+  padding: 50rpx 0;
+  font-size: 32rpx;
+  color: #222222;
+}
