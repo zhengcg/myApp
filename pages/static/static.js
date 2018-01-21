@@ -1,4 +1,4 @@
-// pages/order/order.js
+// pages/static/static.js
 Page({
 
   /**
@@ -62,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  gotoInfo:function(){
-    wx.navigateTo({
-      url: '../info/info'
-    })
   }
 })

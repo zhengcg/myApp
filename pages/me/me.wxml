@@ -13,7 +13,7 @@
     <image src="../../images/icon/icon01.png" />  
     我制作的活动
     </view>
-    <view>
+    <view bindtap='gotoActive'>
     <image src="../../images/icon/icon02.png"/>  
     参与的活动
     </view>

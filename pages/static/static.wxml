@@ -1,0 +1,30 @@
+<view class='container' style='background:#fff;'>
+  <view class='staticHead'>
+    <view>已砍:<text>30元</text></view>
+    <view>剩余:<text>200元</text></view>
+  </view>
+  <view class='listBox'>
+    <view class='tit'>我的砍价帮</view>
+    <view class='list'>
+      <view class='listImg'>
+        <image src="../../images/my-head.png"/>     
+      </view>
+      <view class='con'>是工资</view>
+      <view class='price'>砍掉3.0元</view>
+    </view>
+    <view class='list'>
+      <view class='listImg'>
+        <image src="../../images/my-head.png"/>     
+      </view>
+      <view class='con'>是工资</view>
+      <view class='price'>砍掉3.0元</view>
+    </view>
+    <view class='list'>
+      <view class='listImg'>
+        <image src="../../images/my-head.png"/>     
+      </view>
+      <view class='con'>是工资</view>
+      <view class='price'>砍掉3.0元</view>
+    </view>
+  </view>
+</view>

@@ -41,5 +41,10 @@ Page({
     wx.navigateTo({
       url: '../order/order'
     })
+  },
+  gotoActive: function () {
+    wx.navigateTo({
+      url: '../activeList/activeList'
+    })
   }
 })

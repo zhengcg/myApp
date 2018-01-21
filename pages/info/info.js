@@ -1,10 +1,14 @@
-// pages/order/order.js
+// pages/info/info.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    array: ['美国', '中国', '巴西', '日本'],
+    index: 0,
+    region: ['广东省', '广州市', '海珠区'],
+    customItem: '全部'
   
   },
 
@@ -63,9 +67,16 @@ Page({
   onShareAppMessage: function () {
   
   },
-  gotoInfo:function(){
-    wx.navigateTo({
-      url: '../info/info'
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
     })
   }
 })

@@ -1,7 +1,10 @@
 {
   "pages":[ 
-    
+    "pages/pay/pay",
     "pages/index/index",
+    "pages/static/static",
+    "pages/activeList/activeList",
+    "pages/info/info",
     "pages/order/order",
     "pages/getStart/getStart",
     "pages/problem/problem",

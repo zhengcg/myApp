@@ -1,0 +1,60 @@
+.textBox{
+  padding: 40rpx;
+}
+textarea{
+  width: 670rpx
+}
+.label{
+  background: #fff;
+  padding: 0 40rpx;
+  
+}
+.label>view{
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+.label>view label{
+  display: block;
+  font-size: 32rpx;
+  color: #111;
+  
+}
+.label>view label radio{float: right}
+.label>view label text{
+  display: inline-block;
+  width: 40%;
+}
+.label>view label .p{
+  color: #F6535C;
+  display: inline-block;width: 30%;
+}
+.help{
+  padding: 20rpx 40rpx;
+  color: #aaa;
+}
+.payBox{
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  background: #fff;
+  line-height: 100rpx;
+  height: 100rpx;
+  left: 0;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: #111111;
+  padding-left: 68rpx;
+  
+}
+.payBox>view{
+  position: absolute;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  width: 280rpx;
+  background: #FF6262;
+  color: #fff;
+  right: 0;
+  top: 0
+}

@@ -41,14 +41,7 @@ page{
   line-height: 60rpx;
   width: auto;
 }
-.label text{
-  padding: 0 30rpx;
-  display: inline-block;
-  margin: 10rpx;
-  border-radius: 5rpx;
-  background: #52cac3;
-  color: #fff;
-}
+
 .panel-body .list{
   line-height: 80rpx;
   border-bottom: 1rpx dotted #eee;

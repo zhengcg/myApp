@@ -19,11 +19,9 @@
     <view class='orderBody'>
       <image src="../../images/skin/01.jpg"/>
     </view>
-    <view class='orderFoot'>
-      <text class='f1'>报名表</text>
-      <text class='f2' bindtap='gotoInfo'>编辑</text>
-      <text class='f3'>二维码</text>
-      <text class='f4'>删除活动</text>
+    <view class='orderFoot clearfix'>
+      <text class='fl' bindtap='showDui'>去兑换</text>
+      <text class='fr' bindtap='gotoStatic'>看统计</text>
     </view>
   </view>
   <view class='orderList'>
@@ -34,11 +32,18 @@
     <view class='orderBody'>
       <image src="../../images/skin/01.jpg"/>
     </view>
-    <view class='orderFoot'>
-      <text class='f1'>报名表</text>
-      <text class='f2'>编辑</text>
-      <text class='f3'>二维码</text>
-      <text class='f4'>删除活动</text>
+    <view class='orderFoot clearfix'>
+      <text class='fl'>去兑换</text>
+      <text class='fr'>看统计</text>
+    </view>
+  </view>
+  <view id='shadeDiv'  wx:if="{{duiBox}}" bindtap='hideDui'></view>
+  <view class='duiBox' wx:if="{{duiBox}}">
+    <view class='title'>兑换奖品请联系商家</view>
+    <view class='con'>
+      <view>商家信息:XXXXX</view>
+      <view>商家电话:XXXXX</view>
+      <view>商家地址:XXXXX</view>
     </view>
   </view>
 </view>

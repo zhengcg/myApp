@@ -1,0 +1,37 @@
+<view class='container'>
+  <view class='textBox'>
+    <textarea placeholder="付费说明文字" />
+  </view>
+  <view class='label'>
+    <view>
+      <label class="radio">
+        <text>1次活动</text>
+        <text class='p'>¥2.00</text>
+        <radio value="1"/>
+      </label>
+    </view>
+    <view>
+      <label class="radio">
+        <text>8次活动</text>
+        <text class='p'>¥20.00</text>
+        <radio value="1"/>
+      </label>
+    </view>
+    <view>
+      <label class="radio">
+        <text>58次活动</text>
+        <text class='p'>¥50.00</text>
+        <radio value="1" checked='true'/>
+      </label>
+    </view>
+  </view>
+  <view class='help'>
+  支付说明:您的会员日期是从您支付完成时开始计算，截止……
+  </view>
+  <view style='height:100rpx'></view>
+  <view class='payBox'>
+  <text>合计：¥50</text>
+  <view>确认支付</view>
+  </view>
+  
+</view>

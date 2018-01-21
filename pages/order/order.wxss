@@ -59,6 +59,7 @@ letter-spacing: 0.46rpx;
 }
 .orderNav text.active{
   border-bottom:4rpx solid #FF6262;
+  color:#FF6262
 }
 .orderList{
   background: #fff;

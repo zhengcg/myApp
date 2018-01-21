@@ -1,0 +1,138 @@
+
+.searchBox{
+  height: 80rpx;
+  background: #fff;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #F6F8FC
+}
+.searchDiv{
+  height: 60rpx;
+  position: relative;
+  background: #F6F8FC;
+}
+.iconS{
+  float: left;
+  height: 60rpx;
+  width: 76rpx;
+  
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAA8ZJREFUSA21VmtLlEEUnjOrbVJZGZT5IegGFkHQHygjUKko+hCB0AWiexsF0dIW72GlUrxQUsRCEBLRB+mefm0VLJJAu/yCwIhS1yxcr+/0nLW12df1klsDu+/MnDPPM+fMmXOG1BSN+dZ8pXpKjBndaQxtJDLLoZ6L31f8PuPXQpT1XKnQK2ZyMZ62UTqN2tranL6+n6dd1wSVMotFh0j14fMZxN/xXYpfAWR+fNHog9b6IvPlF2Pjyf8nEJaXl68bGRl9ZoxaA6BuWHWLKPsxc6jDhqmrq/PHYrGt2NQ+bKIM5D7oN2idf5D5aL+ta/dTCJnLt8F9DwGwQGtVq9TiMHNALJuyySaHh93bIN0MT3QQzStmPi9un9DGCZmvFhoz9AZk2dA6EA47DRO0p5hgfpmFI62DxcdhaavW67Yy7x3yLoEblJIzi8fjLejiXKjsb8kEIxqtd6PRaGNRUdFaY8x2oq48jJtEZjctg97eH6fgjrVaU81syGxApVYchls/uq46Jq5OlSmlJfQRGEEo9ciZeRX+dsx8aAAbl+j2IfjYu17D9GJEZB4EN2cSIF6AdGPHcRphwHvEw66qqqp5to7GIe+QCYT+U1vwD/pPYKW/v79/m40lZ7gJu+lznIvttiDTPtwaFQwYtMnGEsJ8mN5JOEhbkGnfmOzO3xj5NpYQSm6c9nLbi2bWz0piCv54E0LJCJIb/3EbTmDCc99sYCGUrF/AfHeuLci8764SDNzHpGsTkLgW1CzRRPSpKHMSG8EtkZHWPuD/abDQlygpkvX/TGfWk1QJy3bjssGdoTYbTTtOqPX3JS2TBG4LZ9tHLT0Jry1D4Ee8hVlcanBnLkkqQrW4PZb1Z0ulFPO1Nca4IUmVOTlzq71IEjQKqQjPBGpAittiTPMNr9JMxxUVFQuNGXwKnEW424FgMCivg5SWIJQZqdQgfQflE47D9VLRUzSnGaAyrI7HB15h/XpYV42qcz/dknFCeRb4/VnFIH2NRfu7u3va8AJIRFq6hck52Rhz+Bwqw1shkxJH5FwQeSQSkWKe0sYrfnJWAEB2HeMjAMCGqB0gT/DkaHZdSVeSQYaWEo2shLx0LBrlNUcxrDkDy+4JFrxUg0/hkiV5ewKBwKDMSZtAODYth39lg+uOhBFT2wE8Jznv/cJ9XZi7Q7Swkvlsr8jFss7OL6g+phTyJpt0UsIkcGVl5YJ4fAg1cxTvUloOi3JhLdIhIUPplsnepOKprq7YYy/ptIRJ4tl805H+V0LZpIf00X8ntEgf+Hwq8gsUvZYRF2bYtQAAAABJRU5ErkJggg==') no-repeat center;
+  background-size: 28rpx;
+}
+.searchDiv input{
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 524rpx;
+  float: left;
+  
+}
+.searchDiv .btnS{
+  height: 60rpx;
+  width: 90rpx;
+  background: #fff;
+  float: left;
+  text-align: right;
+  line-height: 60rpx;
+  font-size: 32rpx;
+color: #FF6262;
+letter-spacing: 0.46rpx;
+
+}
+.orderNav{
+  height: 84rpx;
+  line-height: 84rpx;
+  background: #fff;
+  margin-bottom: 16rpx;
+
+}
+.orderNav>view{
+  float: left;
+  width: 33.333333%;
+  text-align: center;
+}
+.orderNav text{
+  display: inline-block;
+  height: 80rpx;
+  border-bottom:4rpx solid #FFF;
+  padding: 0 20rpx;
+
+}
+.orderNav text.active{
+  border-bottom:4rpx solid #FF6262;
+  color:#FF6262
+}
+.orderList{
+  background: #fff;
+  margin-bottom: 16rpx;
+
+}
+.orderList .orderHead{
+  height: 96rpx;
+  line-height: 96rpx;
+  border-bottom: 2rpx solid #F6F8FC;
+  padding: 0 30rpx;
+  color: #424242;
+}
+.orderList .orderHead view{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 550rpx;
+  display: inline-block;
+}
+.orderList .orderHead text{
+  float: right;
+  color: #FF9900;
+}
+.orderBody{
+  padding:20rpx 30rpx 0 30rpx; 
+}
+.orderBody image{
+  width: 690rpx;
+  height: 170rpx;
+  display: block;
+  margin: 0 auto;
+}
+.orderFoot{
+  height: 92rpx;
+  line-height: 92rpx;
+  padding: 0 30rpx;
+}
+.orderFoot text{
+  color: #2198FA;
+}
+.orderFoot text.fl{float: left}
+.orderFoot text.fr{float: right}
+#shadeDiv{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0.6;
+}
+.duiBox{
+  position: absolute;
+  background: #fff;
+  width: 596rpx;
+  height: 492rpx;
+  left: 50%;
+  top:50%;
+  margin-left: -298rpx;
+  margin-top: -248rpx;
+}
+.duiBox .title{
+  font-size: 32rpx;
+  color: #FF6262;
+  text-align: center;
+  height: 148rpx;
+  line-height: 148rpx;
+}
+.duiBox .con{
+  padding: 0 58rpx;
+  line-height: 66rpx;
+  font-size: 32rpx;
+  color: #111111;
+}
+

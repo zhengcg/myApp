@@ -1,10 +1,11 @@
-// pages/order/order.js
+// pages/activeList/activeList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    duiBox:false
   
   },
 
@@ -63,9 +64,16 @@ Page({
   onShareAppMessage: function () {
   
   },
-  gotoInfo:function(){
+  showDui:function(){
+    
+    this.setData({ duiBox: true })
+  },
+  hideDui:function () {
+    this.setData({ duiBox: false })
+  },
+  gotoStatic:function(){
     wx.navigateTo({
-      url: '../info/info'
+      url: '../static/static'
     })
   }
 })

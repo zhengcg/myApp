@@ -1,0 +1,54 @@
+/* pages/static/static.wxss */
+.staticHead{
+  padding-top: 64rpx;
+  text-align: center;
+  color: #111;
+  font-size: 32rpx;
+  padding-bottom: 42rpx;
+}
+.staticHead>view{
+  display: inline-block;
+  margin: 0 40rpx;
+}
+.staticHead>view text{
+  font-size: 36rpx;
+  color: #FF6262;
+  padding-left: 20rpx;
+}
+.tit{
+  color: #111111;
+  padding: 0 38rpx;
+  margin-bottom: 20rpx;
+}
+.list{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  align-items:center;
+  padding: 24rpx 38rpx;
+  border-bottom: 2rpx solid #E5E5E5
+}
+.list:last-of-type{border: none;}
+.listImg{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden
+
+}
+.listImg image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  margin: 0 auto;
+}
+.con{
+  margin-left: 28rpx;
+  color: #FF6262;
+  width: 290rpx;
+}
+.price{
+  text-align: right;
+  width: 280rpx;
+  margin-left: 20rpx;
+  color: #111;
+}
