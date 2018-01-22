@@ -81,3 +81,4 @@
   }
     .cardFoot view{display: inline-block;width: 40%;}
      .cardFoot view text{color: #FF6262}
+     .picker{width: 350rpx;float: left;height: 80rpx;line-height: 80rpx;box-sizing: border-box;padding: 0 32rpx;font-size: 32rpx;color: #222;text-align: center;background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASJJREFUSA3tkjtuwkAQhmdcIR4C6hzCBYUVIcUSLUdAok04AHAFxAFAaSm4AW0kQLxK34QiJN0O/g2LDBjvSjQUnsJrzeP7Z2aXKLNsA89ugDVgvto1hNSEmKf+u9dnZtExm1NEeLneDhRRi8lp+3XvB3WOLg5xNRJ6IyXdxWo3RoGOmU7kLjbbkRLqgRGxzkUXgXIpN2KmOfxC8mkrouGi6Au1YICFf9hVl0EQFPa/fzMR8k9B/v6oe51H60qCV4r5puu6h4h+KwCnrYgNHLyrCeCAmURs4WAlCqSJIIYLje/8di3I0fZQAAlJk5AT9h+70DQ4GKkCSSLwwfBaTPAoL8o2fO4msYRbCyDxJPI/lLD3ajHXjT9FQ39ZONvAq2/gCI6XvOUBk4P3AAAAAElFTkSuQmCC') no-repeat right center; background-size: 24rpx 24rpx;}

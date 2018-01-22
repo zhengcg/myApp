@@ -17,7 +17,11 @@ Page({
       {id:10,text:'jquery'},
       {id:11,text:'angularjs'},
       {id:12,text:'vuejs'}
-      ]
+      ],
+      array: ['北京', '上海', '深圳', '广州'],
+      index: 0,
+      array1: ['金融P2P', '互联网', '电商', '物流'],
+      index1: 0
 
   },
   onLoad:function(options){

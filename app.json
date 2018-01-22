@@ -1,7 +1,8 @@
 {
   "pages":[ 
-    "pages/pay/pay",
+    
     "pages/index/index",
+    "pages/pay/pay",
     "pages/static/static",
     "pages/activeList/activeList",
     "pages/info/info",
