@@ -1,6 +1,6 @@
 {
   "pages":[ 
-    
+    "pages/model/model",
     "pages/index/index",
     "pages/pay/pay",
     "pages/static/static",

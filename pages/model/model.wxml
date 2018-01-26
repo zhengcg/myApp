@@ -1,0 +1,40 @@
+<view class='container' style='background:#f7906b'>
+  <view class='topM'>
+    <view class='box'>
+    <view style='padding: 126rpx 0 50rpx 0'><image src='../../images/icon/icon11.png'/></view>
+      <view>上传活动图片</view>
+      <view>建议尺寸：660*400</view>
+    </view>
+    <view class='btnBox clearfix'>
+      <view class='btn1'></view>
+      <view class='btn2'></view>
+    </view>
+  </view>
+
+  <view class='titBox'>
+  XXX机构夏季优惠促销，冰点大放送，包你爽到底
+  </view>
+  <view class='dateBox'>
+    <view class='clearfix'>
+      <text>开始时间：</text>
+      <view class='date'></view>
+      <view class='time'></view>
+    </view>
+    <view class='clearfix'>
+      <text>结束时间：</text>
+      <view class='date'></view>
+      <view class='time'></view>
+    </view>
+    <view style='text-align:center;color:#000;'>（活动周期时间建议5~7天）</view>
+  </view>
+
+  <view class='priceBox'>
+    <view class='price'>
+      <view>
+        <text>原价：</text>
+        <view></view>
+      </view>
+      
+    </view>
+  </view>
+</view>
