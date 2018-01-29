@@ -78,7 +78,179 @@
           <image src='../../images/skin/01.jpg'/>
         </view>
       </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
     </view>
+  </view>
+
+  <view class='modelBox'>
+    <view class='modelHead'>活动规则</view>
+    <view class='modelBody'>
+      <view class='b' style='margin-top:80rpx;color:#000'>
+        <view style='margin-bottom:20rpx;'>1.点击上方按钮“我要参加”参加活动。</view>
+        <view style='margin-bottom:20rpx;'>2.可以让朋友们一起帮忙减价。</view>
+        <view style='margin-bottom:20rpx;'>3.奖品份数有限，每个报名者支付后奖品就会减少一份，份数领完则无法继续报名，亲速度哦！</view>
+        <view style='margin-bottom:20rpx;'>4.完成后，马上联系商家兑奖吧。</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='modelBox'>
+    <view class='modelHead'>领奖信息</view>
+    <view class='modelBody'>
+      <view class='b' style='margin-top:80rpx;color:#000;font-size:32rpx;'>
+        <view>领奖时间：</view>
+        <view>领奖地址：</view>
+        <view>领奖电话：17610175165</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='modelBox'>
+    <view class='modelHead'>机构介绍</view>
+    <view class='modelBody' style='padding-top:80rpx;'>
+      <view class='b' style='color:#000;font-size:24rpx;'>
+        <view class='close'></view>
+        <text>XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>
+      </view>
+      <view class='b'>
+        <view class='close'></view>
+        <view>
+          <image src='../../images/skin/01.jpg'/>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+      <view class='b'>
+        <view class='btnBoxs'>
+          <view style='margin-bottom:20rpx;'>添加文字</view>
+          <view>添加图片</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='modelBox'>
+    <view class='modelHead'>信息收集设置</view>
+    <view class='modelBody' style='padding-top:80rpx;'>
+      <view class='tipView'>
+        可以根据活动具体需求来设定需要收集客户的信息字段
+      </view>
+      <view class='tipView'>
+        自定义项为空则不显示，最多可填6个字。
+      </view>
+      <view class='tipView'>
+        如果有用户报名，此内容不可再做任何修改。
+      </view>
+      <view class='tipView' style='color:#F6756C'>
+        谨慎设定自定义信息收集，要求填写过多信息，报名数将大大降低。
+      </view>
+      <view class='m2' style='margin-top:40rpx;'>
+        <view class='boxI'>
+          <view>姓名</view>
+        </view>
+        <view class='boxL active'>
+        必填项
+        </view>
+      </view>
+      <view class='m2'>
+        <view class='boxI'>
+          <view>收集号码</view>
+        </view>
+        <view class='boxL active'>
+        必填项
+        </view>
+      </view>
+      <view class='m2'>
+        <view class='boxI boxIL'>
+          <input type='text' placeholder='信息项名称'/>
+        </view>
+        <view class='boxL'>
+        必填项
+        </view>
+      </view>
+      <view class='m2'>
+        <view class='boxI boxIL'>
+          <input type='text' placeholder='信息项名称'/>
+        </view>
+        <view class='boxL'>
+        必填项
+        </view>
+      </view>
+      <view class='m2'>
+        <view class='boxI boxIL'>
+          <input type='text' placeholder='信息项名称'/>
+        </view>
+        <view class='boxL'>
+        必填项
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='modelBox'>
+    <view class='modelHead'>
+      排行榜
+    </view>
+    <view class='modelBody' style='padding-top:80rpx;'>
+      <view class='modelList'>
+        <view class='tr'>
+          <view class='td'>排名</view>
+          <view class='td'>姓名</view>
+          <view class='td'>目前价格</view>
+        </view>
+        <view class='tr'>
+          <view class='td'>1</view>
+          <view class='td'>张三</view>
+          <view class='td'>128.00</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='footer clearfix'>
+    <view>预览活动</view>
+    <view>发布活动</view>
   </view>
 
 

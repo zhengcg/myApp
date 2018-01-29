@@ -15,5 +15,10 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
+  },
+  gotoModel:function(){
+    wx.navigateTo({
+      url: '../model/model'
+    })
   }
 })

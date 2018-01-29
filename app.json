@@ -1,7 +1,8 @@
 {
   "pages":[ 
-    "pages/model/model",
+    
     "pages/index/index",
+    "pages/model/model",
     "pages/pay/pay",
     "pages/static/static",
     "pages/activeList/activeList",

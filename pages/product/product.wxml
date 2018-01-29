@@ -25,8 +25,8 @@
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
     </view>
-    <button type="default" class='defaultBtn btn'>查看示例</button>
-    <button type="primary" class='primaryBtn btn'>马上制作</button>
+    <button type="default" class='defaultBtn btn' bindtap='gotoModel'>查看示例</button>
+    <button type="primary" class='primaryBtn btn' bindtap='gotoModel'>马上制作</button>
   </view>
   </view>
   
