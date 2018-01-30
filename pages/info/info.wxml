@@ -1,12 +1,15 @@
 <view class='container' style='padding-top:16rpx;'>
   <view class='info info1'>
     <view>
-      <input placeholder='请输入机构名称' type="text" />
+      <input placeholder='请输入机构名称' type="text" value='{{orgName}}' />
     </view>
     <view>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        <view class="picker arr">
-          所属行业：{{array[index]}}
+      <picker bindchange="changeIndustry" value="{{industryIndex}}" range="{{industry}}" range-key="{{'industry'}}">
+        <view class="picker arr" wx:if="{{industry.length>0}}">
+          {{industry[industryIndex].industry}}
+        </view>
+        <view class="picker" wx:else>
+         选择行业
         </view>
       </picker>
 
@@ -14,22 +17,25 @@
   </view>
   <view class='info info2'>
     <view>
-      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-        <view class="picker arr">
-          所在地：{{region[0]}}，{{region[1]}}，{{region[2]}}
+      <picker  value="{{regionIndex}}" range-key="{{'area_name'}}" range="{{region}}" bindchange="changeRegion">
+        <view class="picker arr"  wx:if="{{region.length>0}}">
+          {{region[regionIndex].area_name}}
+        </view>
+        <view class="picker arr"  wx:else>
+         选择城市
         </view>
       </picker>
     </view>
   </view>
   <view class='info info3'>
     <view>
-      <input placeholder='请输入姓名或联系人' type="text" />
+      <input placeholder='请输入姓名或联系人' type="text" value='{{name}}'/>
     </view>
     <view>
-      <input placeholder='请输入手机号' type="number" />
+      <input placeholder='请输入手机号' type="number" value='{{phone}}'/>
     </view>
     <view>
-      <input placeholder='请输入收到的验证码' type="number" class="yzm"/>
+      <input placeholder='请输入收到的验证码' type="number" class="yzm" value='{{code}}'/>
       <text>获取验证码</text>
     </view>
   </view>
@@ -44,7 +50,7 @@
   </view>
 
   <view class='btnBox'>
-    <button type="primary"> 提交信息 </button>
+    <button type="primary" bindtap='sendMsg'> 提交信息 </button>
   </view>
 
 </view>
