@@ -2,24 +2,27 @@
   <view class='searchBox'>
   <view class='searchDiv clearfix'>
   <view class='iconS'></view>
-  <input placeholder="请输入搜索关键词" type='text'/>
-  <view class='btnS'>搜索</view>
+  <input placeholder="请输入搜索关键词" type='text' confirm-type="搜索" bindconfirm="sendMsg"/>
+  <!-- <view class='btnS' bindtap='sendMsg'>搜索</view> -->
   </view>
   </view>
-  <view class='cardBox'>
-      <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
-      <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
-      <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view></view>
-    </view>
-    <view class='cardBox'>
-      <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
-      <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
-      <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view><text style='color:#FF6262;float:right'>进行中</text></view>
-    </view>
-    <view class='cardBox'>
-      <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
-      <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
-      <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view><text style='color:#FF6262;float:right'>已过期</text></view>
-    </view>
-    <view style='height:80rpx;'></view>
+  <view style='height:96rpx;'></view>
+  <scroll-view scroll-y="true">
+      <view class='cardBox'>
+        <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
+        <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
+        <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view></view>
+      </view>
+      <view class='cardBox'>
+        <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
+        <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
+        <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view><text style='color:#FF6262;float:right'>进行中</text></view>
+      </view>
+      <view class='cardBox'>
+        <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
+        <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
+        <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view><text style='color:#FF6262;float:right'>已过期</text></view>
+      </view>
+  </scroll-view>
+  <view style='height:80rpx;'></view>
 </view>

@@ -11,5 +11,11 @@ App({
   onError: function(msg) {
     console.log(msg)
   },
-  globalData: 'I am global data'
+  globalData:{
+    api: 'https://appdev.qigle.com/bargain/api/bargain/',
+    header: {
+      'content-type': 'application/json',
+      'session_3rd':'a1lvsTSQePnzweICAMHg=='
+    }
+  }
 })

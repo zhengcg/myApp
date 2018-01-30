@@ -46,5 +46,10 @@ Page({
     wx.navigateTo({
       url: '../activeList/activeList'
     })
+  },
+  gotoPay: function () {
+    wx.navigateTo({
+      url: '../pay/pay'
+    })
   }
 })

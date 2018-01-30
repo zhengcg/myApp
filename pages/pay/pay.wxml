@@ -2,29 +2,31 @@
   <view class='textBox'>
     <textarea placeholder="付费说明文字" />
   </view>
+ <radio-group class="radio-group" bindchange="radioChange">
   <view class='label'>
     <view>
       <label class="radio">
         <text>1次活动</text>
         <text class='p'>¥2.00</text>
-        <radio value="1"/>
+        <radio value="1" />
       </label>
     </view>
     <view>
       <label class="radio">
         <text>8次活动</text>
         <text class='p'>¥20.00</text>
-        <radio value="1"/>
+        <radio value="2" />
       </label>
     </view>
     <view>
       <label class="radio">
         <text>58次活动</text>
         <text class='p'>¥50.00</text>
-        <radio value="1" checked='true'/>
+        <radio value="3"  checked='true'/>
       </label>
     </view>
   </view>
+  </radio-group>
   <view class='help'>
   支付说明:您的会员日期是从您支付完成时开始计算，截止……
   </view>

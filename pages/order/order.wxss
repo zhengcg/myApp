@@ -122,3 +122,41 @@ letter-spacing: 0.46rpx;
   float: right;
   color: #FF9900;
 }
+
+#shadeDiv{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0.6;
+}
+.duiBox{
+  position: absolute;
+  background: #fff;
+  width: 600rpx;
+  height: 730rpx;
+  left: 50%;
+  top:124rpx;
+  margin-left: -300rpx;
+}
+.duiBox .imgBox{
+  width: 500rpx;
+  padding: 50rpx;
+  margin: 0 auto;
+}
+.duiBox .imgBox image{
+  width: 500rpx;
+  height: 500rpx;
+  display: block;
+  margin: 0 auto;
+}
+.duiBox .con{
+  text-align: center;
+  font-size: 32rpx;
+  color: #FF6262;
+  margin-top: 30rpx;
+}
+
+

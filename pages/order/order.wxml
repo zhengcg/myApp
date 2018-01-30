@@ -20,9 +20,9 @@
       <image src="../../images/skin/01.jpg"/>
     </view>
     <view class='orderFoot'>
-      <text class='f1'>报名表</text>
+      <text class='f1' bindtap='gotoTable'>报名表</text>
       <text class='f2' bindtap='gotoInfo'>编辑</text>
-      <text class='f3'>二维码</text>
+      <text class='f3' bindtap='openCode'>二维码</text>
       <text class='f4'>删除活动</text>
     </view>
   </view>
@@ -40,5 +40,13 @@
       <text class='f3'>二维码</text>
       <text class='f4'>删除活动</text>
     </view>
+  </view>
+
+  <view id='shadeDiv'  wx:if="{{code}}" bindtap='closeCode'></view>
+  <view class='duiBox' wx:if="{{code}}">
+    <view class='imgBox'>
+      <image src='../../images/my-head.png'/>
+    </view>
+    <view class='con'>请将二维码保存到相册</view>
   </view>
 </view>

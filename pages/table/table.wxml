@@ -1,0 +1,29 @@
+<view class='container' style='background:#fff;padding:30rpx 0'>
+  <view class="table">
+    <view class="thead">
+      <view class="th">姓名</view>
+      <view class="th">手机号</view>
+      <view class="th">价格</view>
+      <view class="th">帮砍人数</view>
+    </view>
+    <view class="tr">
+      <view class="td">item11</view>
+      <view class="td">item2</view>
+      <view class="td">item3</view>
+      <view class="td">item3</view>
+    </view>
+    <view class="tr">
+      <view class="td">item11</view>
+      <view class="td">item2地</view>
+      <view class="td">item3</view>
+       <view class="td">item3</view>
+    </view>
+    <view class="tr">
+      <view class="td">item11</view>
+      <view class="td">item2</view>
+      <view class="td">item3</view>
+      <view class="td">item3</view>
+    </view>
+  </view>
+
+</view>

@@ -13,6 +13,18 @@
   font-size: 30rpx;
   color: #F2456E;
   line-height: 1.5;
+  position: relative;
+}
+.modelImg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modelImg image{
+  width: 660rpx!important;
+  height: 400rpx!important;
 }
 .box image{
   display: block;

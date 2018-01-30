@@ -17,7 +17,7 @@
     <image src="../../images/icon/icon02.png"/>  
     参与的活动
     </view>
-     <view>
+     <view  bindtap='gotoPay'>
      <image src="../../images/icon/icon03.png"/>  
      奖品兑换
      </view>

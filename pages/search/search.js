@@ -61,5 +61,17 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  sendMsg:function(e){
+    if (e.detail.value){
+      console.log(e.detail.value)
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '请输入搜索关键词',
+        showCancel:false
+      })
+    }
+    
   }
 })

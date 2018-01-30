@@ -2,9 +2,10 @@
 .searchBox{
   height: 80rpx;
   background: #fff;
-  margin-bottom: 16rpx;
   padding: 10rpx 30rpx;
   box-sizing: border-box;
+  position: fixed;
+  top: 0
 }
 .searchDiv{
   height: 60rpx;
@@ -21,7 +22,7 @@
 .searchDiv input{
   height: 60rpx;
   line-height: 60rpx;
-  width: 524rpx;
+  width: 614rpx;
   float: left;
   
 }

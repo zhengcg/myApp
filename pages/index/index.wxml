@@ -9,37 +9,40 @@
     
     <view class="head">
       <swiper autoplay="true" >
-        <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+        <block wx:for="{{imgUrls}}" wx:key="1">
           <swiper-item>
-            <image src="{{item.src}}" class="slide-image" width="375" height="110"/>
+            <image src="{{item}}" class="slide-image" width="375" height="110"/>
           </swiper-item>
         </block>
       </swiper>
     </view>
     <view class='selectBox'>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        <view class="picker" style='margin-right:25rpx;'>
-          {{array[index]}}
+      <picker  value="{{regionIndex}}" range-key="{{'area_name'}}" range="{{region}}" bindchange="changeRegion">
+        <view class="picker" style='margin-right:25rpx;' wx:if="{{region.length>0}}">
+          {{region[regionIndex].area_name}}
+        </view>
+        <view class="picker" style='margin-right:25rpx;' wx:else>
+         选择城市
         </view>
       </picker>
     <view class='borderBox'></view>
-    <picker bindchange="bindPickerChange" value="{{index1}}" range="{{array1}}">
-        <view class="picker">
-          {{array1[index1]}}
+    <picker bindchange="changeIndustry" value="{{industryIndex}}" range="{{industry}}" range-key="{{'industry'}}">
+        <view class="picker" wx:if="{{industry.length>0}}">
+          {{industry[industryIndex].industry}}
+        </view>
+        <view class="picker" wx:else>
+         选择行业
         </view>
       </picker>
 
     </view>
-    <view class='cardBox'>
-      <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
-      <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
-      <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view></view>
-    </view>
-    <view class='cardBox'>
-      <view class='cardTitle'>先生美发开业大酬宾美发开业大酬宾哈净化大师倒计时大幅度</view>
-      <view class='cardBody'><image src="../../images/skin/01.jpg"/></view>
-      <view class='cardFoot'><view>曝光次数：<text>1234</text></view><view>报名人次：<text>1234</text></view></view>
-    </view>
+    <scroll-view scroll-y="true">
+      <view class='cardBox'  wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class='cardTitle'>{{item.title}}</view>
+        <view class='cardBody'><image src="{{item.head_url}}"/></view>
+        <view class='cardFoot'><view>曝光次数：<text>{{item.show}}</text></view><view>报名人次：<text>{{item.apply}}</text></view></view>
+      </view>
+    </scroll-view>
     <view style='height:80rpx;'></view>
    
 </view>

@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    code:false
   
   },
 
@@ -67,5 +68,16 @@ Page({
     wx.navigateTo({
       url: '../info/info'
     })
+  },
+  gotoTable: function () {
+    wx.navigateTo({
+      url: '../table/table'
+    })
+  },
+  openCode:function(){
+    this.setData({ code: true })
+  },
+  closeCode:function(){
+    this.setData({ code: false })
   }
 })
