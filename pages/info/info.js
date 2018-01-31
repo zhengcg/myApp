@@ -15,7 +15,9 @@ Page({
     orgName:'',
     name:'',
     phone:'',
-    code:''
+    code:'',
+    checkbox:true,
+    check:''
     
   
   },
@@ -76,6 +78,36 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  checkboxChange:function(e){
+    this.setData({
+      check: e.detail.value.toString()
+    })
+    console.log(this.data.check)
+
+
+  },
+  orgName:function(e){
+    this.setData({
+      orgName: e.detail.value
+    })
+
+  },
+  name:function(e){
+    this.setData({
+      name: e.detail.value
+    })
+
+  },
+  phone:function(e){
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  code:function (e) {
+    this.setData({
+      code: e.detail.value
+    })
   },
   getIndustry: function () {
     var self = this;
@@ -145,7 +177,7 @@ Page({
   sendMsg:function(){
     var self=this;
 
-    if(!this.validate()){
+    if(this.validate()){
       try {
         wx.showLoading({
           title: '加载中',
@@ -207,13 +239,29 @@ Page({
       })
       return false
 
-    } else if (this.data.code==""){
+    } else if (!(/^1[34578]\d{9}$/.test(this.data.phone))){
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号',
+        showCancel: false
+      })
+      return false
+
+    }else if (this.data.code==""){
       wx.showModal({
         title: '提示',
         content: '请输入验证码',
         showCancel: false
       })
       return false
+    } else if (this.data.check==""){
+      wx.showModal({
+        title: '提示',
+        content: '请阅读并同意协议',
+        showCancel: false
+      })
+      return false
+
     }else{
       return true
     }

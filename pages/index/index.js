@@ -11,21 +11,21 @@ Page({
     industry: [],
     industryIndex:0,
     list:[],
-    page:1
+    page:1,
+    area_id:'',
+    industry_id:''
 
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
+    this.getRegion();
+    this.getIndustry(); 
 
   },
   onReady:function(){
     // 生命周期函数--监听页面初次渲染完成
-    this.getBanner();
-    this.getRegion();
-    this.getList();
-    this.getIndustry();
-
-
+    this.getBanner();   
+    
   },
   onShow:function(){
     // 生命周期函数--监听页面显示
@@ -57,15 +57,23 @@ Page({
     }
   },
   changeRegion:function(e){
+    var self=this;
     this.setData({
-      regionIndex:e.detail.value
-    })
+      regionIndex:e.detail.value,
+      area_id: self.data.region[e.detail.value].area_id,
+      page:1
+    });
+    this.getList()
 
   },
   changeIndustry:function(e){
-   this.setData({
-     industryIndex: e.detail.value
-   })
+    var self = this;
+    this.setData({
+      industryIndex: e.detail.value,
+      industry_id: self.data.industry[e.detail.value].id,
+      page:1
+    })
+    this.getList()
   },
   gotoSearch:function(e){
     wx.navigateTo({
@@ -93,6 +101,7 @@ Page({
           self.setData({
             imgUrls: res.data.data.split(",")
           })
+          
         }
       }
     })
@@ -117,7 +126,8 @@ Page({
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
           self.setData({
-            industry: res.data.data
+            industry: res.data.data,
+            industry_id: res.data.data[self.data.industryIndex].id
           })
         }
       }
@@ -143,8 +153,10 @@ Page({
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
           self.setData({
-            region: res.data.data
+            region: res.data.data,
+            area_id: res.data.data[self.data.regionIndex].area_id
           })
+          self.getList(); 
         }
       }
     })
@@ -162,10 +174,12 @@ Page({
       console.log("当前微信版本不支持")
     }    
     wx.request({
-      url: api +'getList', //仅为示例，并非真实的接口地址
+      url: api +'bargainSearch', //仅为示例，并非真实的接口地址
       data: {
         count: 10,
         page: self.data.page,
+        industry_id:self.data.industry_id,
+        area_id: self.data.area_id,
         session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
       },
       method:'GET',

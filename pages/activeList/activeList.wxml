@@ -1,42 +1,31 @@
 <view class='container'>
   <view class='searchBox'>
-    <view class='searchDiv clearfix'>
-      <view class='iconS'></view>
-        <input placeholder="输入关键字" type='text'/>
-      <view class='btnS'>搜索</view>
-    </view>
+   <view class='searchDiv clearfix'>
+    <view class='iconS'></view>
+    <input placeholder="请输入搜索关键词" type='text' confirm-type="search" bindconfirm="sendMsg"/>
+   </view>
   </view>
+  <view style='height:80rpx;'></view>
   <view class='orderNav clearfix'>
     <view><text class='active'>全部</text></view>
     <view><text>进行中</text></view>
     <view><text>已结束</text></view>
   </view>
-  <view class='orderList'>
+  <scroll-view scroll-y="true">
+  <view class='orderList' wx:for="{{list}}" wx:key="{{item.id}}">
     <view class='orderHead'>
-      <view>的三国杀官方对方的好地方恢复恢复光滑方恢复恢复光滑</view>
+      <view>{{item.bargain.title}}</view>
       <text>进行中</text>
     </view>
     <view class='orderBody'>
-      <image src="../../images/skin/01.jpg"/>
+      <image src="{{item.bargain.head_url}}"/>
     </view>
     <view class='orderFoot clearfix'>
       <text class='fl' bindtap='showDui'>去兑换</text>
       <text class='fr' bindtap='gotoStatic'>看统计</text>
     </view>
   </view>
-  <view class='orderList'>
-    <view class='orderHead'>
-      <view>的三国杀官方对方的好地方恢复恢复光滑方恢复恢复光滑</view>
-      <text>进行中</text>
-    </view>
-    <view class='orderBody'>
-      <image src="../../images/skin/01.jpg"/>
-    </view>
-    <view class='orderFoot clearfix'>
-      <text class='fl'>去兑换</text>
-      <text class='fr'>看统计</text>
-    </view>
-  </view>
+  </scroll-view>
   <view id='shadeDiv'  wx:if="{{duiBox}}" bindtap='hideDui'></view>
   <view class='duiBox' wx:if="{{duiBox}}">
     <view class='title'>兑换奖品请联系商家</view>

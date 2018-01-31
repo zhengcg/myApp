@@ -1,7 +1,7 @@
 <view class='container' style='padding-top:16rpx;'>
   <view class='info info1'>
     <view>
-      <input placeholder='请输入机构名称' type="text" value='{{orgName}}' />
+      <input placeholder='请输入机构名称' type="text" bindinput="orgName"/>
     </view>
     <view>
       <picker bindchange="changeIndustry" value="{{industryIndex}}" range="{{industry}}" range-key="{{'industry'}}">
@@ -29,13 +29,13 @@
   </view>
   <view class='info info3'>
     <view>
-      <input placeholder='请输入姓名或联系人' type="text" value='{{name}}'/>
+      <input placeholder='请输入姓名或联系人' type="text" bindinput="name"/>
     </view>
     <view>
-      <input placeholder='请输入手机号' type="number" value='{{phone}}'/>
+      <input placeholder='请输入手机号' type="number" bindinput='phone'/>
     </view>
     <view>
-      <input placeholder='请输入收到的验证码' type="number" class="yzm" value='{{code}}'/>
+      <input placeholder='请输入收到的验证码' type="number" class="yzm" bindinput='code'/>
       <text>获取验证码</text>
     </view>
   </view>
@@ -43,7 +43,7 @@
     <view>
       <checkbox-group bindchange="checkboxChange">
         <label class="checkbox">
-          <checkbox value="1" checked="true"/>阅读并同意<text style='float:none;'>《用户协议》</text>
+          <checkbox checked="{{checkbox}}" value="1" />阅读并同意<text style='float:none;'>《用户协议》</text>
         </label>
       </checkbox-group>
     </view>

@@ -1,23 +1,24 @@
 <view class='container'>
   <view class='searchBox'>
-    <view class='searchDiv clearfix'>
-      <view class='iconS'></view>
-        <input placeholder="输入关键字" type='text'/>
-      <view class='btnS'>搜索</view>
-    </view>
+   <view class='searchDiv clearfix'>
+    <view class='iconS'></view>
+    <input placeholder="请输入搜索关键词" type='text' confirm-type="search" bindconfirm="sendMsg"/>
+   </view>
   </view>
+  <view style='height:80rpx;'></view>
   <view class='orderNav clearfix'>
     <view><text class='active'>全部</text></view>
     <view><text>进行中</text></view>
     <view><text>已结束</text></view>
   </view>
-  <view class='orderList'>
+  <scroll-view scroll-y="true">
+  <view class='orderList'  wx:for="{{list}}" wx:key="{{item.id}}">
     <view class='orderHead'>
-      <view>的三国杀官方对方的好地方恢复恢复光滑方恢复恢复光滑</view>
+      <view>{{item.title}}</view>
       <text>进行中</text>
     </view>
     <view class='orderBody'>
-      <image src="../../images/skin/01.jpg"/>
+      <image src="{{item.head_url}}"/>
     </view>
     <view class='orderFoot'>
       <text class='f1' bindtap='gotoTable'>报名表</text>
@@ -26,21 +27,8 @@
       <text class='f4'>删除活动</text>
     </view>
   </view>
-  <view class='orderList'>
-    <view class='orderHead'>
-      <view>的三国杀官方对方的好地方恢复恢复光滑方恢复恢复光滑</view>
-      <text>进行中</text>
-    </view>
-    <view class='orderBody'>
-      <image src="../../images/skin/01.jpg"/>
-    </view>
-    <view class='orderFoot'>
-      <text class='f1'>报名表</text>
-      <text class='f2'>编辑</text>
-      <text class='f3'>二维码</text>
-      <text class='f4'>删除活动</text>
-    </view>
-  </view>
+  </scroll-view>
+
 
   <view id='shadeDiv'  wx:if="{{code}}" bindtap='closeCode'></view>
   <view class='duiBox' wx:if="{{code}}">
