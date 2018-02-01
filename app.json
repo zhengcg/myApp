@@ -1,9 +1,9 @@
 {
   "pages":[ 
-    "pages/model/model",
+    
     "pages/index/index",
     "pages/product/product",
-    
+    "pages/model/model",
     "pages/detail/detail",
     "pages/table/table",
     "pages/agreement/agreement",
