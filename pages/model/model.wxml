@@ -2,8 +2,8 @@
   <view class='topM'>
     <view class='box' bindtap='chooseImg'>
     <view style='padding: 126rpx 0 50rpx 0'><image src='../../images/icon/icon11.png'/></view>
-      <view>上传活动图片</view>
-      <view>建议尺寸：660*400</view>
+      <view hidden="{{img}}">上传活动图片</view>
+      <view hidden="{{img}}">建议尺寸：660*400</view>
       <view class='modelImg' v-if="{{img}}">
         <image src='{{img}}'/>
       </view>
