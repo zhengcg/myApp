@@ -2,6 +2,7 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
+var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -84,7 +85,7 @@ Page({
           filePath: tempFilePaths[0],
           name: 'image',
           formData: {
-            session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+            session_3rd: session_3rd
           },
           success:function(res){
             console.log(res.data)

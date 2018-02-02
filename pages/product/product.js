@@ -1,7 +1,8 @@
 // pages/label/label.js
 var app = getApp();
 var api = app.globalData.api;
-var header = app.globalData.header
+var header = app.globalData.header;
+var session_3rd = app.globalData.session_3rd;
 Page({
   data:{
     page:1,

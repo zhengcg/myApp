@@ -1,7 +1,8 @@
 // pages/info/info.js
 var app = getApp();
 var api = app.globalData.api;
-var header = app.globalData.header
+var header = app.globalData.header;
+var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -121,7 +122,7 @@ Page({
     wx.request({
       url: api + 'bargain_industry', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method: 'GET',
       success: function (res) {
@@ -147,7 +148,7 @@ Page({
     wx.request({
       url: api + 'bargain_area', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method: 'GET',
       success: function (res) {
@@ -194,7 +195,7 @@ Page({
           name:self.data.name,
           phone:self.data.phone,
           code:self.data.code,
-          session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+          session_3rd: session_3rd
         },
         // header: { "Content-Type": "application/x-www-form-urlencoded" },
         method: 'POST',

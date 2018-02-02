@@ -2,7 +2,8 @@
 //获取应用实例
 var app = getApp();
 var api=app.globalData.api;
-var header = app.globalData.header
+var header = app.globalData.header;
+var session_3rd = app.globalData.session_3rd
 Page({
   data:{
     imgUrls:[],
@@ -92,7 +93,7 @@ Page({
     wx.request({
       url: api + 'index_banner', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method: 'GET',
       success: function (res) {
@@ -119,7 +120,7 @@ Page({
     wx.request({
       url: api + 'bargain_industry', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method: 'GET',
       success: function (res) {
@@ -146,7 +147,7 @@ Page({
     wx.request({
       url: api + 'bargain_area', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method: 'GET',
       success: function (res) {
@@ -180,7 +181,7 @@ Page({
         page: self.data.page,
         industry_id:self.data.industry_id,
         area_id: self.data.area_id,
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method:'GET',
       success: function (res) {

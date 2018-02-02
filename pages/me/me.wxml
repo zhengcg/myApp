@@ -1,9 +1,9 @@
 <view class="container">
   <view class='head'>
     <view class='headImg'>
-      <image src="../../images/my-head.png"/>     
+      <image src="{{avatarUrl}}"/>     
     </view>
-    时公子
+    {{nickName}}
   </view>
   <view class='meTi'>
       您还可以免费做3次活动

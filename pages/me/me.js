@@ -1,11 +1,30 @@
 // pages/me/me.js
+var app = getApp();
+var api = app.globalData.api;
+var header = app.globalData.header;
+var session_3rd = app.globalData.session_3rd;
 Page({
-  data:{},
+  data:{
+    nickName:'',
+    avatarUrl:''
+
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },
   onReady:function(){
     // 页面渲染完成
+    var self=this;
+    wx.getUserInfo({
+      success: function (res) {
+        var userInfo = res.userInfo
+        self.setData({
+          nickName: userInfo.nickName,
+          avatarUrl: userInfo.avatarUrl
+        })
+        
+      }
+    })
 
   },
   onShow:function(){

@@ -1,6 +1,6 @@
 {
   "pages":[ 
-    
+    "pages/me/me",
     "pages/index/index",
     "pages/product/product",
     "pages/model/model",
@@ -16,8 +16,8 @@
     "pages/problem/problem",
     "pages/raiders/raiders",
     "pages/feedback/feedback",
-    "pages/search/search",
-    "pages/me/me"
+    "pages/search/search"
+    
     
   ],
   "window":{

@@ -1,6 +1,7 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
+var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -95,7 +96,7 @@ Page({
         count: 10,
         page: self.data.page,
         key: self.data.keyWord,
-        session_3rd: 'bfc0cd4caaa1d4e98b5d71dd33d69042'
+        session_3rd: session_3rd
       },
       method: 'GET',
       success: function (res) {
