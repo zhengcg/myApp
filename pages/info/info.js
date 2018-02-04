@@ -18,7 +18,8 @@ Page({
     phone:'',
     code:'',
     checkbox:true,
-    check:''
+    check:'1',
+    type:''
     
   
   },
@@ -27,7 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // var type = [options.type]
+    this.setData({
+      type: options.type
+    })  
   },
 
   /**
@@ -84,7 +88,6 @@ Page({
     this.setData({
       check: e.detail.value.toString()
     })
-    console.log(this.data.check)
 
 
   },
@@ -205,8 +208,22 @@ Page({
             wx.showToast({
               title: '提交成功！',
               icon: 'success',
-              duration: 2000
+              duration: 2000,
+              success: function () {
+                  wx.switchTab({
+                    url: '../model/model?type=' + self.data.type
+                  })
+                
+              }
             })
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'success',
+              duration: 2000,
+           
+            })
+
           }
         }
       })

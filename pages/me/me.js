@@ -15,16 +15,29 @@ Page({
   onReady:function(){
     // 页面渲染完成
     var self=this;
-    wx.getUserInfo({
-      success: function (res) {
-        var userInfo = res.userInfo
-        self.setData({
-          nickName: userInfo.nickName,
-          avatarUrl: userInfo.avatarUrl
-        })
-        
-      }
-    })
+    console.log(session_3rd)
+    if (!wx.getStorageSync('nickName')) {
+      wx.getUserInfo({
+        success: function (res) {
+          var userInfo = res.userInfo
+          wx.setStorageSync('nickName', userInfo.nickName);
+          wx.setStorageSync('avatarUrl', userInfo.avatarUrl);
+          self.setData({
+            nickName: userInfo.nickName,
+            avatarUrl: userInfo.avatarUrl
+          })
+
+        }
+      })
+
+    }else{
+      self.setData({
+        nickName: wx.getStorageSync('nickName'),
+        avatarUrl: wx.getStorageSync('avatarUrl')
+      })
+
+    }
+    
 
   },
   onShow:function(){

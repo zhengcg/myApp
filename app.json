@@ -1,8 +1,10 @@
 {
   "pages":[ 
-    "pages/me/me",
-    "pages/index/index",
     "pages/product/product",
+    "pages/index/index",
+    "pages/me/me",
+    "pages/feedback/feedback",
+    
     "pages/model/model",
     "pages/detail/detail",
     "pages/table/table",
@@ -15,7 +17,7 @@
     "pages/getStart/getStart",
     "pages/problem/problem",
     "pages/raiders/raiders",
-    "pages/feedback/feedback",
+    
     "pages/search/search"
     
     

@@ -12,7 +12,12 @@
       <view class='cardBox' wx:for="{{list}}" wx:key="{{item.id}}">
         <view class='cardTitle'>{{item.title}}</view>
         <view class='cardBody'><image src="{{item.head_url}}"/></view>
-        <view class='cardFoot'><view>曝光次数：<text>{{item.show}}</text></view><view>报名人次：<text>{{item.apply}}</text></view><text style='color:#FF6262;float:right'>进行中</text></view>
+        <view class='cardFoot'><view>曝光次数：<text>{{item.show}}</text></view><view>报名人次：<text>{{item.apply}}</text></view>
+        <text style='color:#FF6262;float:right' wx-if='{{item.process_status==1}}'>普通</text>
+        <text style='color:#FF6262;float:right' wx-if='{{item.process_status==2}}'>进行中</text>
+        <text style='color:#FF6262;float:right' wx-if='{{item.process_status==3}}'>已结束</text>
+
+        </view>
       </view>
 
   </scroll-view>

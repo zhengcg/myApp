@@ -11,7 +11,9 @@ Page({
     code:false,
     list: [],
     page: 1,
-    keyWord: ''
+    keyWord: '',
+    type:1
+
   
   },
 
@@ -72,6 +74,17 @@ Page({
   onShareAppMessage: function () {
   
   },
+  tabFn:function(e){
+    this.setData({
+      type: e.currentTarget.dataset.type,
+      page:1,
+      keyWord:''
+
+    })
+    this.getList()
+
+
+  },
   sendMsg: function (e) {
     if (e.detail.value) {
       this.setData({
@@ -103,6 +116,7 @@ Page({
         count: 10,
         page: self.data.page,
         key: self.data.keyWord,
+        type:self.data.type,
         session_3rd: session_3rd
       },
       method: 'GET',

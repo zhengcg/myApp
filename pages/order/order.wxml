@@ -2,20 +2,22 @@
   <view class='searchBox'>
    <view class='searchDiv clearfix'>
     <view class='iconS'></view>
-    <input placeholder="请输入搜索关键词" type='text' confirm-type="search" bindconfirm="sendMsg"/>
+    <input placeholder="请输入搜索关键词" type='text' value="{{keyWord}}" confirm-type="search" bindconfirm="sendMsg"/>
    </view>
   </view>
   <view style='height:80rpx;'></view>
   <view class='orderNav clearfix'>
-    <view><text class='active'>全部</text></view>
-    <view><text>进行中</text></view>
-    <view><text>已结束</text></view>
+    <view bindtap='tabFn' data-type='1'><text class="{{type==1?'active':'default'}}">全部</text></view>
+    <view bindtap='tabFn' data-type='2'><text class="{{type==2?'active':'default'}}">进行中</text></view>
+    <view bindtap='tabFn' data-type='3'><text class="{{type==3?'active':'default'}}">已结束</text></view>
   </view>
   <scroll-view scroll-y="true">
   <view class='orderList'  wx:for="{{list}}" wx:key="{{item.id}}">
     <view class='orderHead'>
       <view>{{item.title}}</view>
-      <text>进行中</text>
+      <text wx-if='{{item.process_status==1}}'>普通</text>
+      <text wx-if='{{item.process_status==2}}'>进行中</text>
+      <text wx-if='{{item.process_status==3}}'>已结束</text>
     </view>
     <view class='orderBody'>
       <image src="{{item.head_url}}"/>

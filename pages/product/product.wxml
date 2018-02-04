@@ -1,7 +1,7 @@
 <view class="container">
   <scroll-view class="nav" scroll-x="true">
-          <text class="{{selected==0?'cur':'default'}}" bindtap='selected0'>全部</text>
-          <text  class="{{selected==1?'cur':'default'}}" bindtap='selected1'>疯狂砍价</text>
+          <text class="{{selected==0?'cur':'default'}}" bindtap='selected' data-type='0'>全部</text>
+          <text  class="{{selected==1?'cur':'default'}}" bindtap='selected' data-type='1'>疯狂砍价</text>
           <!-- <text>集赞活动</text>
           <text>助力活动</text>
           <text>疯狂砍价</text>  -->
@@ -12,30 +12,30 @@
   <view class='proBox clearfix'>
   <view class='proList'>
     <view><image src="../../images/my-head.png"/></view>
-    <view class='tit clearfix'><text>疯狂砍价</text><view>多风格型</view></view>
+    <view class='tit clearfix'><text>疯狂砍价1</text><view>多风格型</view></view>
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
     </view>
-    <button type="default" class='defaultBtn btn' bindtap='gotoDetail'>查看示例</button>
-    <button type="primary" class='primaryBtn btn' bindtap='gotoModel'>马上制作</button>
+    <button type="default" class='defaultBtn btn' bindtap='gotoDetail' data-type='1'>查看示例</button>
+    <button type="primary" class='primaryBtn btn' bindtap='gotoModel' data-type='1'>马上制作</button>
   </view>
   <view class='proList'>
     <view><image src="../../images/my-head.png"/></view>
-    <view class='tit clearfix'><text>疯狂砍价</text><view>多风格型</view></view>
+    <view class='tit clearfix'><text>疯狂砍价2</text><view>多风格型</view></view>
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
     </view>
-    <button type="default" class='defaultBtn btn' bindtap='gotoDetail'>查看示例</button>
-    <button type="primary" class='primaryBtn btn' bindtap='gotoModel'>马上制作</button>
+    <button type="default" class='defaultBtn btn' bindtap='gotoDetail' data-type='2'>查看示例</button>
+    <button type="primary" class='primaryBtn btn' bindtap='gotoModel' data-type='2'>马上制作</button>
   </view>
   <view class='proList'>
     <view><image src="../../images/my-head.png"/></view>
-    <view class='tit clearfix'><text>疯狂砍价</text><view>多风格型</view></view>
+    <view class='tit clearfix'><text>疯狂砍价3</text><view>多风格型</view></view>
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
     </view>
-    <button type="default" class='defaultBtn btn' bindtap='gotoDetail'>查看示例</button>
-    <button type="primary" class='primaryBtn btn' bindtap='gotoModel'>马上制作</button>
+    <button type="default" class='defaultBtn btn' bindtap='gotoDetail' data-type='3'>查看示例</button>
+    <button type="primary" class='primaryBtn btn' bindtap='gotoModel' data-type='3'>马上制作</button>
   </view>
   </view>
   

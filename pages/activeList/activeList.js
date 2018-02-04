@@ -11,7 +11,8 @@ Page({
     duiBox:false,
     list: [],
     page: 1,
-    keyWord: ''
+    keyWord: '',
+    type: 1
   
   },
 
@@ -65,6 +66,17 @@ Page({
     this.getList()
   
   },
+  tabFn: function (e) {
+    this.setData({
+      type: e.currentTarget.dataset.type,
+      page: 1,
+      keyWord: ''
+
+    })
+    this.getList()
+
+
+  },
   sendMsg: function (e) {
     if (e.detail.value) {
       this.setData({
@@ -96,7 +108,8 @@ Page({
         count: 10,
         page: self.data.page,
         key: self.data.keyWord,
-        session_3rd: session_3rd
+        session_3rd: session_3rd,
+        type:self.data.type
       },
       method: 'GET',
       success: function (res) {
