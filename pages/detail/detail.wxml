@@ -2,12 +2,12 @@
   <view class='topM'>
     <view class='box' bindtap='chooseImg'>
       <view class='modelImg'>
-        <image src='../../images/skin/01.jpg'/>
+        <image src='{{info.head_url}}'/>
       </view>
     </view>
     <view class='det1 clearfix'>
-      <view><text>原价：</text>300元</view>
-      <view><text>现价：</text>30元</view>     
+      <view><text>原价：</text>{{info.price}}元</view>
+      <view><text>现价：</text>{{info.bargain_price}}元</view>     
     </view>
     <view class='btnBox clearfix'>
       <view class='btn1'></view>
@@ -18,7 +18,7 @@
   <view class='titBox'>
     <view>XXX机构夏季优惠促销</view>
     <view>冰点大放送，包你爽到底</view>
-    <view style='font-size:28rpx;margin-top:40rpx;'>活动时间：2017.12.12-2018.12.12</view>
+    <view style='font-size:28rpx;margin-top:40rpx;'>活动时间：{{info.start_time}}-{{info.end_time}}</view>
   </view>
 
   <view class='det2'></view>
@@ -28,11 +28,11 @@
     <view class='modelHead'>奖品描述</view>
     <view class='modelBody'>
       <view class='m1 clearfix'>
-        <view>本期奖品：<text>300份</text></view>
-        <view>剩余奖品：<text>300份</text></view>
+        <view>本期奖品：<text>{{info.goods_num}}份</text></view>
+        <view>剩余奖品：<text>{{info.goods_num}}份</text></view>
       </view>
       <view class='b'>
-        <text style='color:#000;'> XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>       
+        <text style='color:#000;'> XXX商品，原价{{info.price}}元，活动亏本卖，最低降到299元。数量有限售完为止！</text>       
       </view>
       <view class='b'>
         <view>
@@ -57,10 +57,11 @@
     <view class='modelHead'>活动规则</view>
     <view class='modelBody'>
       <view class='b' style='margin-top:80rpx;color:#000'>
-        <view style='margin-bottom:20rpx;'>1.点击上方按钮“我要参加”参加活动。</view>
+        <!-- <view style='margin-bottom:20rpx;'>1.点击上方按钮“我要参加”参加活动。</view>
         <view style='margin-bottom:20rpx;'>2.可以让朋友们一起帮忙减价。</view>
         <view style='margin-bottom:20rpx;'>3.奖品份数有限，每个报名者支付后奖品就会减少一份，份数领完则无法继续报名，亲速度哦！</view>
-        <view style='margin-bottom:20rpx;'>4.完成后，马上联系商家兑奖吧。</view>
+        <view style='margin-bottom:20rpx;'>4.完成后，马上联系商家兑奖吧。</view> -->
+        <view style='margin-bottom:20rpx;'>{{info.rule}}</view>
       </view>
     </view>
   </view>
@@ -70,9 +71,9 @@
     <view class='modelHead'>领奖信息</view>
     <view class='modelBody'>
       <view class='b' style='margin-top:80rpx;color:#000;font-size:32rpx;'>
-        <view>领奖时间：</view>
-        <view>领奖地址：</view>
-        <view>领奖电话：17610175165</view>
+        <view>领奖时间：{{info.get_time}}</view>
+        <view>领奖地址：{{info.get_address}}</view>
+        <view>领奖电话：{{info.get_phone}}</view>
       </view>
     </view>
   </view>

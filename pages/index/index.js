@@ -178,9 +178,28 @@ Page({
     this.getList()
   },
   gotoSearch:function(e){
-    wx.navigateTo({
-      url: '../search/search'
+    // wx.navigateTo({
+    //   url: '../search/search'
+    // })
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token', //仅为示例，并非真实的接口地址
+      data: {
+        AppId:'wx1fb97546281ff80c',
+       AppSecret:'9c987f169606d7ef8495de713f6d5483'
+      },
+      method: 'GET',
+      success: function (res) {
+        try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
+        // if (res.data.code == 200) {
+        //   self.setData({
+        //     imgUrls: res.data.data.split(",")
+        //   })
+
+        // }
+        console.log(res)
+      }
     })
+
   },
   getBanner:function(){
     var self=this;
@@ -302,6 +321,11 @@ Page({
           }
         }
       }
+    })
+  },
+  gotoDetail:function(e){
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id
     })
   }
 })
