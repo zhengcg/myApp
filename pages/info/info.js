@@ -209,7 +209,7 @@ Page({
               icon: 'success',
               duration: 2000,
               success: function () {
-                  wx.switchTab({
+                wx.navigateTo({
                     url: '../model/model?type=' + self.data.type
                   })
                 
