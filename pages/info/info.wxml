@@ -36,7 +36,7 @@
     </view>
     <view>
       <input placeholder='请输入收到的验证码' type="number" class="yzm" bindinput='code'/>
-      <text>获取验证码</text>
+      <text bindtap='getYZM'>获取验证码</text>
     </view>
   </view>
   <view class='info info4'>

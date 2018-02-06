@@ -231,6 +231,44 @@ Page({
     }
 
   },
+  getYZM:function(){
+    var self = this;
+      try {
+        wx.showLoading({
+          title: '加载中',
+        })
+      } catch (err) {
+        console.log("当前微信版本不支持")
+      }
+      wx.request({
+        url: api + 'goods_num', //仅为示例，并非真实的接口地址
+        data: {
+          session_3rd: session_3rd
+        },
+        // header: { "Content-Type": "application/x-www-form-urlencoded" },
+        method: 'GET',
+        success: function (res) {
+          try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
+          if (res.data.code == 200) {
+            wx.showToast({
+              title: '发送成功！',
+              icon: 'success',
+              duration: 2000
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'success',
+              duration: 2000,
+
+            })
+
+          }
+        }
+      })
+
+
+  },
   validate:function(){
     
     if (this.data.orgName==""){
