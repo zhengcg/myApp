@@ -241,8 +241,9 @@ Page({
         console.log("当前微信版本不支持")
       }
       wx.request({
-        url: api + 'goods_num', //仅为示例，并非真实的接口地址
+        url: 'https://appdev.qigle.com/bargain/api/user_mp/sendcode/phone', //仅为示例，并非真实的接口地址
         data: {
+          phone: self.data.phone,
           session_3rd: session_3rd
         },
         // header: { "Content-Type": "application/x-www-form-urlencoded" },
