@@ -10,7 +10,13 @@ Page({
    */
   data: {
     id:'',
-    info:{}
+    type:'',
+    info:{},
+    rule:[],
+    description:[],
+    org_description:[]
+
+
   
   },
 
@@ -19,7 +25,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      id:options.id
+      id:options.id,
+      type:options.type
     })
   
   },
@@ -93,7 +100,10 @@ Page({
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
           self.setData({
-            info:res.data.data
+            info:res.data.data,
+            description: JSON.parse(res.data.data.description),
+            org_description: JSON.parse(res.data.data.org_description),
+            rule: res.data.data.rule.split(",")
           })
         }
       }

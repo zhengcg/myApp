@@ -15,18 +15,43 @@
   </view>
 
   <view class='titBox'>
-  XXX机构夏季优惠促销，冰点大放送，包你爽到底
+  <textarea value='{{title}}' placeholder="请输入活动主题"  bindinput="changeTitle"/>
   </view>
+
   <view class='dateBox'>
     <view class='clearfix'>
       <text>开始时间：</text>
-      <view class='date'></view>
-      <view class='time'></view>
+       <view class='date'>
+         <picker mode="date" value="{{startDate}}" start="{{newDate}}" end="2030-01-01" bindchange="changeStartDate">
+            <view class="picker">
+              {{startDate}}
+            </view>
+          </picker>
+      </view> 
+      <view class='time'>
+        <picker mode="time" value="{{startTime}}" start="09:01" end="21:01" bindchange="changeStartTime">
+          <view class="picker">
+            {{startTime}}
+          </view>
+        </picker>
+      </view>
     </view>
     <view class='clearfix'>
       <text>结束时间：</text>
-      <view class='date'></view>
-      <view class='time'></view>
+      <view class='date'>
+        <picker mode="date" value="{{endDate}}" start="{{startTime}}" end="2030-01-01" bindchange="changeEndDate">
+            <view class="picker">
+              {{endDate}}
+            </view>
+          </picker>
+      </view>
+      <view class='time'>
+        <picker mode="time" value="{{endTime}}" start="09:01" end="21:01" bindchange="changeEndTime">
+          <view class="picker">
+            {{endTime}}
+          </view>
+        </picker>
+      </view>
     </view>
     <view style='text-align:center;color:#000;'>（活动周期时间建议5~7天）</view>
   </view>
@@ -35,12 +60,12 @@
     <view class='price clearfix'>
       <view>
         <text>原价：</text>
-        <view>300</view>
+        <view><input type='number' value='{{yPrice}}' bindinput="yPrice"/></view>
         元
       </view>
       <view style='margin-left:100rpx;'>
         <text>底价：</text>
-        <view>100</view>
+        <view><input type='number' value='{{dPrice}}' bindinput="dPrice"/></view>
         元
       </view>     
     </view>
@@ -48,12 +73,12 @@
     <view class='price clearfix'>
       <view>
         <text>最少：</text>
-        <view>1</view>
+        <view><input type='number' value='{{sPrice}}' bindinput="sPrice"/></view>
         元
       </view>
       <view style='margin-left:100rpx;'>
         <text>最多：</text>
-        <view>10</view>
+        <view><input type='number' value='{{ddPrice}}' bindinput="ddPrice"/></view>
         元
       </view>     
     </view>
@@ -67,54 +92,27 @@
     <view class='modelBody'>
       <view class='m1'>
         <text>本期奖品：</text>
-        <view>300</view>
+        <view><input type='number' value='{{count}}' bindinput="count"/></view>
         份
       </view>
       <view style='color:#aaa;line-height:80rpx;text-align: center;'>奖品数量可增不可减，请谨慎填写</view>
-      <view class='b'>
-        <view class='close'></view>
-        <text style='color:#000;font-size:24rpx;'> XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>       
-      </view>
-      <view class='b'>
-        <view class='close'></view>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
+      <view class='b' wx:for="{{description}}" wx:key="1">
+        <view class='close' bindtap='removeDes' data-index="{{index}}"></view>
+         <view wx-if="{{item.src}}">
+          <image src='{{item.src}}'/>
+        </view> 
+        <text wx-if="{{!item.src}}" style='color:#000;font-size:24rpx;'>{{item}}</text>
       </view>
       <view class='b'>
         <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
-        </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
-        </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
-        </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
-        </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
-        </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
+          <view class="section" wx-if="{{isText}}">
+              <form bindsubmit="addDesTextF">
+                <textarea placeholder="输入要添加的文字" name="textarea"/>
+                <button form-type="submit"> 提交 </button>
+              </form>
+          </view>         
+          <view style='margin-bottom:20rpx;' bindtap='addDesText'>添加文字</view>
+          <view bindtap='addDesImg'>添加图片</view>
         </view>
       </view>
     </view>
@@ -124,10 +122,7 @@
     <view class='modelHead'>活动规则</view>
     <view class='modelBody'>
       <view class='b' style='margin-top:80rpx;color:#000'>
-        <view style='margin-bottom:20rpx;'>1.点击上方按钮“我要参加”参加活动。</view>
-        <view style='margin-bottom:20rpx;'>2.可以让朋友们一起帮忙减价。</view>
-        <view style='margin-bottom:20rpx;'>3.奖品份数有限，每个报名者支付后奖品就会减少一份，份数领完则无法继续报名，亲速度哦！</view>
-        <view style='margin-bottom:20rpx;'>4.完成后，马上联系商家兑奖吧。</view>
+        <view style='margin-bottom:20rpx;' wx:for="{{rule}}" wx:key="index">{{item}}</view>
       </view>
     </view>
   </view>
@@ -139,7 +134,7 @@
       <view class='b' style='margin-top:80rpx;color:#000;font-size:32rpx;'>
         <view>领奖时间：</view>
         <view>领奖地址：</view>
-        <view>领奖电话：17610175165</view>
+        <view>领奖电话：</view>
       </view>
     </view>
   </view>
@@ -147,28 +142,26 @@
   <view class='modelBox'>
     <view class='modelHead'>机构介绍</view>
     <view class='modelBody' style='padding-top:80rpx;'>
-      <view class='b' style='color:#000;font-size:24rpx;'>
-        <view class='close'></view>
-        <text>XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>
-      </view>
-      <view class='b'>
-        <view class='close'></view>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
+      <view class='b' wx:for="{{org_description}}" wx:key="1">
+          <view class='close' bindtap='removeOrg' data-index="{{index}}"></view>
+          <view wx-if="{{item.src}}">
+            <image src='{{item.src}}'/>
+          </view> 
+          <text wx-if="{{!item.src}}" style='color:#000;font-size:24rpx;'>{{item}}</text>
         </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
+        <view class='b'>
+          <view class='btnBoxs'>
+            <view class="section" wx-if="{{isOrg}}">
+                <form bindsubmit="addOrgTextF">
+                  <textarea placeholder="输入要添加的文字" name="textarea"/>
+                  <button form-type="submit"> 提交 </button>
+                </form>
+            </view>         
+            <view style='margin-bottom:20rpx;' bindtap='addOrgText'>添加文字</view>
+            <view bindtap='addOrgImg'>添加图片</view>
+          </view>
         </view>
-      </view>
-      <view class='b'>
-        <view class='btnBoxs'>
-          <view style='margin-bottom:20rpx;'>添加文字</view>
-          <view>添加图片</view>
-        </view>
-      </view>
+
     </view>
   </view>
 
@@ -197,7 +190,7 @@
       </view>
       <view class='m2'>
         <view class='boxI'>
-          <view>收集号码</view>
+          <view>手机号码</view>
         </view>
         <view class='boxL active'>
         必填项
@@ -231,7 +224,7 @@
     </view>
   </view>
 
-  <view class='modelBox'>
+  <!-- <view class='modelBox'>
     <view class='modelHead'>
       排行榜
     </view>
@@ -249,11 +242,11 @@
         </view>
       </view>
     </view>
-  </view>
+  </view> -->
 
   <view class='footer clearfix'>
     <view>预览活动</view>
-    <view>发布活动</view>
+    <view bindtap='submitMsg'>发布活动</view>
   </view>
 
 

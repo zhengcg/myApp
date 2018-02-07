@@ -1,12 +1,14 @@
 {
   "pages":[ 
     "pages/index/index",
+    "pages/model/model",
     "pages/product/product",
+    
     
     "pages/me/me",
     "pages/feedback/feedback",
     
-    "pages/model/model",
+    
     "pages/detail/detail",
     "pages/table/table",
     "pages/agreement/agreement",

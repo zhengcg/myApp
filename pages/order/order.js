@@ -12,7 +12,8 @@ Page({
     list: [],
     page: 1,
     keyWord: '',
-    type:1
+    type:1,
+    codeImg:''
 
   
   },
@@ -78,7 +79,8 @@ Page({
     this.setData({
       type: e.currentTarget.dataset.type,
       page:1,
-      keyWord:''
+      keyWord:'',
+      list:[]
 
     })
     this.getList()
@@ -139,20 +141,69 @@ Page({
       }
     })
   },
-  gotoInfo:function(){
+  gotoModel:function(e){
     wx.navigateTo({
-      url: '../info/info'
+      url: '../model/model?id=' + e.currentTarget.dataset.id + "&type=" + e.currentTarget.dataset.type
     })
   },
-  gotoTable: function () {
+  gotoTable: function (e) {
     wx.navigateTo({
-      url: '../table/table'
+      url: '../table/table?id=' + e.currentTarget.dataset.id
     })
   },
-  openCode:function(){
-    this.setData({ code: true })
+  openCode:function(e){
+    var self=this;
+    wx.request({
+      url: api + 'getqrcode', //仅为示例，并非真实的接口地址
+      data: {
+        session_3rd: session_3rd,
+        id: e.currentTarget.dataset.id
+      },
+      method: 'GET',
+      success: function (res) {
+        try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
+
+        self.setData({ code: true,codeImg:res.data.data })
+      }
+    })
+    
   },
   closeCode:function(){
     this.setData({ code: false })
+  },
+  delete:function(e){
+    var self=this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除该活动吗？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: api + 'delete_bargain', //仅为示例，并非真实的接口地址
+            data: {
+              session_3rd: session_3rd,
+              id: e.currentTarget.dataset.id
+            },
+            method: 'GET',
+            success: function (res) {
+              try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
+              self.data.list.splice(e.currentTarget.dataset.index,1);
+              self.setData({
+                list: self.data.list
+              })
+             
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+   
+  },
+  gotoDetail: function (e) {
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id + "&type=" + e.currentTarget.dataset.type
+    })
   }
 })

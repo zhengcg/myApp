@@ -216,6 +216,15 @@
   color: #000;
   font-size: 24rpx;
 }
+.btnBoxs .section{
+  background: #fff;
+  margin-bottom:20rpx;
+  height: auto;
+  text-align: left;
+}
+.btnBoxs .section textarea{
+  width: auto;
+}
 .tipView{
   color: #8C8E8C;
   font-size: 30rpx;
@@ -305,4 +314,14 @@
   margin-left: 30rpx;
   background: red;
   color: #fff;
+}
+.picker {
+  width: 100%;
+  height: 80rpx;
+}
+input{
+  width: 100%;
+  height: 80rpx;
+  display: inline-block;
+  vertical-align: middle;
 }

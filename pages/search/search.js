@@ -122,5 +122,10 @@ Page({
         }
       }
     })
+  },
+  gotoDetail: function (e) {
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id + "&type=" + e.currentTarget.dataset.type
+    })
   }
 })

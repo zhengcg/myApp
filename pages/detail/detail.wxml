@@ -16,8 +16,7 @@
   </view>
 
   <view class='titBox'>
-    <view>XXX机构夏季优惠促销</view>
-    <view>冰点大放送，包你爽到底</view>
+    <view>{{info.title}}</view>
     <view style='font-size:28rpx;margin-top:40rpx;'>活动时间：{{info.start_time}}-{{info.end_time}}</view>
   </view>
 
@@ -31,24 +30,13 @@
         <view>本期奖品：<text>{{info.goods_num}}份</text></view>
         <view>剩余奖品：<text>{{info.goods_num}}份</text></view>
       </view>
-      <view class='b'>
-        <text style='color:#000;'> XXX商品，原价{{info.price}}元，活动亏本卖，最低降到299元。数量有限售完为止！</text>       
+      <view class='b' wx:for="{{description}}" wx:key="{{index}}">
+        <view wx-if="{{item.src}}">
+          <image src='{{item.src}}'/>
+        </view> 
+        <text wx-if="{{!item.src}}" style='color:#000;font-size:24rpx;'>{{item}}</text>
       </view>
-      <view class='b'>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
-      </view>
-      <view class='b'>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
-      </view>
-      <view class='b'>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
-      </view>
+
 
     </view>
   </view>
@@ -57,11 +45,7 @@
     <view class='modelHead'>活动规则</view>
     <view class='modelBody'>
       <view class='b' style='margin-top:80rpx;color:#000'>
-        <!-- <view style='margin-bottom:20rpx;'>1.点击上方按钮“我要参加”参加活动。</view>
-        <view style='margin-bottom:20rpx;'>2.可以让朋友们一起帮忙减价。</view>
-        <view style='margin-bottom:20rpx;'>3.奖品份数有限，每个报名者支付后奖品就会减少一份，份数领完则无法继续报名，亲速度哦！</view>
-        <view style='margin-bottom:20rpx;'>4.完成后，马上联系商家兑奖吧。</view> -->
-        <view style='margin-bottom:20rpx;'>{{info.rule}}</view>
+        <view style='margin-bottom:20rpx;' wx:for="{{rule}}" wx:key="{{index}}">{{item}}</view>
       </view>
     </view>
   </view>
@@ -81,30 +65,13 @@
   <view class='modelBox'>
     <view class='modelHead'>机构介绍</view>
     <view class='modelBody' style='padding-top:80rpx;'>
-      <view class='b' style='color:#000;'>
-        <text>XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>
-      </view>
-      <view class='b'>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
-      </view>
-      <view class='b' style='color:#000;'>
-        <text>XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>
-      </view>
-      <view class='b'>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
-      </view>
-      <view class='b' style='color:#000;'>
-        <text>XXX商品，原价2999元，活动亏本卖，最低降到299元。数量有限售完为止！</text>
-      </view>
-      <view class='b'>
-        <view>
-          <image src='../../images/skin/01.jpg'/>
-        </view>
-      </view>
+      <view class='b' wx:for="{{org_description}}" wx:key="{{index}}">
+        <view wx-if="{{item.src}}">
+          <image src='{{item.src}}'/>
+        </view> 
+        <text wx-if="{{!item.src}}" style='color:#000;font-size:24rpx;'>{{item}}</text>
+      </view>    
+     
     </view>
   </view>
 

@@ -12,7 +12,7 @@
     <view bindtap='tabFn' data-type='3'><text class="{{type==3?'active':'default'}}">已结束</text></view>
   </view>
   <scroll-view scroll-y="true">
-  <view class='orderList'  wx:for="{{list}}" wx:key="{{item.id}}">
+  <view class='orderList'  wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='gotoDetail'>
     <view class='orderHead'>
       <view>{{item.title}}</view>
       <text wx-if='{{item.process_status==1}}'>普通</text>
@@ -23,10 +23,10 @@
       <image src="{{item.head_url}}"/>
     </view>
     <view class='orderFoot'>
-      <text class='f1' bindtap='gotoTable'>报名表</text>
-      <text class='f2' bindtap='gotoInfo'>编辑</text>
-      <text class='f3' bindtap='openCode'>二维码</text>
-      <text class='f4'>删除活动</text>
+      <text class='f1' catchtap='gotoTable'>报名表</text>
+      <text class='f2' catchtap='gotoModel' data-id="{{item.id}}" data-type="{{item.type}}">编辑</text>
+      <text class='f3' catchtap='openCode' data-id="{{item.id}}">二维码</text>
+      <text class='f4' catchtap='delete' data-id="{{item.id}}" data-index="{{index}}">删除活动</text>
     </view>
   </view>
   </scroll-view>
@@ -35,7 +35,7 @@
   <view id='shadeDiv'  wx:if="{{code}}" bindtap='closeCode'></view>
   <view class='duiBox' wx:if="{{code}}">
     <view class='imgBox'>
-      <image src='../../images/my-head.png'/>
+      <image src='{{codeImg}}'/>
     </view>
     <view class='con'>请将二维码保存到相册</view>
   </view>
