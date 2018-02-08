@@ -91,7 +91,8 @@ Page({
     if (e.detail.value) {
       this.setData({
         keyWord: e.detail.value,
-        page: 1
+        page: 1,
+        list:[]
       })
       this.getList()
     } else {

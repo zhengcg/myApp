@@ -12,7 +12,10 @@ Page({
     list: [],
     page: 1,
     keyWord: '',
-    type: 1
+    type: 1,
+    sInfo:'',
+    sPhone:'',
+    sAdress:''
   
   },
 
@@ -70,7 +73,8 @@ Page({
     this.setData({
       type: e.currentTarget.dataset.type,
       page: 1,
-      keyWord: ''
+      keyWord: '',
+      list:[]
 
     })
     this.getList()
@@ -81,7 +85,8 @@ Page({
     if (e.detail.value) {
       this.setData({
         keyWord: e.detail.value,
-        page: 1
+        page: 1,
+        list:[]
       })
       this.getList()
     } else {
@@ -138,16 +143,27 @@ Page({
   onShareAppMessage: function () {
   
   },
-  showDui:function(){
+  showDui:function(e){
+    var info = this.data.list[e.currentTarget.dataset.index]
     
-    this.setData({ duiBox: true })
+    this.setData({
+        duiBox: true,
+        sInfo:info.bargain.title,
+        sPhone:info.bargain.get_phone,
+        sAdress:info.bargain.get_address
+       })
   },
   hideDui:function () {
     this.setData({ duiBox: false })
   },
-  gotoStatic:function(){
+  gotoStatic:function(e){
     wx.navigateTo({
-      url: '../static/static'
+      url: '../static/static?id=' + e.currentTarget.dataset.id
+    })
+  },
+  gotoDetail: function (e) {
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id + "&type=" + e.currentTarget.dataset.type
     })
   }
 })

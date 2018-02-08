@@ -12,7 +12,7 @@
     <view bindtap='tabFn' data-type='3'><text class="{{type==3?'active':'default'}}">已结束</text></view>
   </view>
   <scroll-view scroll-y="true">
-  <view class='orderList' wx:for="{{list}}" wx:key="{{item.id}}">
+  <view class='orderList' wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.bargain.id}}" data-type="{{item.bargain.type}}" bindtap='gotoDetail'>
     <view class='orderHead'>
       <view>{{item.bargain.title}}</view>
       <text wx-if='{{item.bargain.process_status==1}}'>普通</text>
@@ -23,8 +23,8 @@
       <image src="{{item.bargain.head_url}}"/>
     </view>
     <view class='orderFoot clearfix'>
-      <text class='fl' bindtap='showDui'>去兑换</text>
-      <text class='fr' bindtap='gotoStatic'>看统计</text>
+      <text class='fl' catchtap='showDui' data-index="{{index}}">去兑换</text>
+      <text class='fr' catchtap='gotoStatic' data-id="{{item.bargain.id}}">看统计</text>
     </view>
   </view>
   </scroll-view>
@@ -32,9 +32,9 @@
   <view class='duiBox' wx:if="{{duiBox}}">
     <view class='title'>兑换奖品请联系商家</view>
     <view class='con'>
-      <view>商家信息:XXXXX</view>
-      <view>商家电话:XXXXX</view>
-      <view>商家地址:XXXXX</view>
+      <view>商家信息:{{sInfo}}</view>
+      <view>商家电话:{{sPhone}}</view>
+      <view>商家地址:{{sAdress}}</view>
     </view>
   </view>
 </view>
