@@ -1,4 +1,4 @@
-<view class='container' style='background:#f7906b'>
+<view class='container {{typeClass}}'>
   <view class='topM'>
     <view class='box' bindtap='chooseImg'>
     <view style='padding: 126rpx 0 50rpx 0'><image src='../../images/icon/icon11.png'/></view>
@@ -15,7 +15,7 @@
   </view>
 
   <view class='titBox'>
-  <textarea value='{{title}}' placeholder="请输入活动主题"  bindinput="changeTitle"/>
+  <textarea value='{{title}}' placeholder="请输入活动主题"  bindinput="changeTitle" style='height:150rpx;' placeholder-style='color:#fff'/>
   </view>
 
   <view class='dateBox'>
@@ -182,7 +182,8 @@
       </view>
       <view class='m2' style='margin-top:40rpx;'>
         <view class='boxI'>
-          <view>姓名</view>
+          <!-- <view></view> -->
+          <input type='text' placeholder='姓名' disabled='true'></input>
         </view>
         <view class='boxL active'>
         必填项
@@ -190,7 +191,8 @@
       </view>
       <view class='m2'>
         <view class='boxI'>
-          <view>手机号码</view>
+          <!-- <view></view> -->
+          <input type='num' placeholder='手机号码'  disabled='true'></input>
         </view>
         <view class='boxL active'>
         必填项
@@ -198,7 +200,7 @@
       </view>
       <view class='m2'>
         <view class='boxI boxIL'>
-          <input type='text' placeholder='信息项名称'/>
+          <input type='text' placeholder='信息项名称' bindtap='need1'/>
         </view>
         <view class='boxL'>
         必填项
@@ -206,7 +208,7 @@
       </view>
       <view class='m2'>
         <view class='boxI boxIL'>
-          <input type='text' placeholder='信息项名称'/>
+          <input type='text' placeholder='信息项名称' bindtap='need2'/>
         </view>
         <view class='boxL'>
         必填项
@@ -214,7 +216,7 @@
       </view>
       <view class='m2'>
         <view class='boxI boxIL'>
-          <input type='text' placeholder='信息项名称'/>
+          <input type='text' placeholder='信息项名称' bindtap='need3'/>
         </view>
         <view class='boxL'>
         必填项

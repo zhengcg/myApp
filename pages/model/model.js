@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    typeClass: 'type1',
     id:'',
     title:'',
     img:'',
@@ -31,7 +32,10 @@ Page({
     need_info:["姓名","手机号码"],
     get_time:'2018-09-10',
     get_address:'瞎编一个提交试试',
-    get_phone:'18910232146' 
+    get_phone:'18910232146',
+    need1:'',
+    need2:'',
+    need3:''
   },
 
   /**
@@ -190,11 +194,38 @@ Page({
       title: e.detail.value
     })
   },
-
+  need1(e){
+    this.setData({
+      need1: e.detail.value
+    })
+  },
+  need2(e) {
+    this.setData({
+      need2: e.detail.value
+    })
+  },
+  need3(e) {
+    this.setData({
+      need3: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    if (this.data.type == 1) {
+      this.setData({
+        typeClass: 'type1'
+      })
+    } else if (this.data.type == 2) {
+      this.setData({
+        typeClass: 'type2'
+      })
+    } else {
+      this.setData({
+        typeClass: 'type3'
+      })
+    }
   
   },
 
@@ -325,7 +356,7 @@ Page({
         get_address: self.data.get_address,
         get_phone: self.data.get_phone,
         org_description: JSON.stringify(self.data.org_description),
-        need_info: self.data.need_info.toString()
+        need_info: (self.data.need_info.concat([self.data.need1, self.data.need2, self.data.need3])).toString()
       },
       method: 'POST',
       success: function (res) {
