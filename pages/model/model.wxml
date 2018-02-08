@@ -108,7 +108,7 @@
           <view class="section" wx-if="{{isText}}">
               <form bindsubmit="addDesTextF">
                 <textarea placeholder="输入要添加的文字" name="textarea"/>
-                <button form-type="submit"> 提交 </button>
+                <button form-type="submit" class='subBtn' type='primary'> 提交 </button>
               </form>
           </view>         
           <view style='margin-bottom:20rpx;' bindtap='addDesText'>添加文字</view>
