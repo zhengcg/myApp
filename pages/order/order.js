@@ -160,7 +160,7 @@ Page({
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
 
-        self.setData({ code: true,codeImg:res.data.data })
+        self.setData({ code: true, codeImg: res.data.data })
       }
     })
     

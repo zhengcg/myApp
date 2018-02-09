@@ -16,7 +16,8 @@ Page({
     },
     rule:[],
     description:[],
-    org_description:[]
+    org_description:[],
+    rank:[]
 
 
   
@@ -225,7 +226,7 @@ Page({
         bargain_id: self.data.id,
         session_3rd: wx.getStorageSync('token')
       },
-      method: 'GET',
+      method: 'POST',
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
@@ -259,7 +260,7 @@ Page({
         apply_id: '',
         session_3rd: wx.getStorageSync('token')
       },
-      method: 'GET',
+      method: 'POST',
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
@@ -301,8 +302,10 @@ Page({
             type: res.data.data.type,
             description: JSON.parse(res.data.data.description),
             org_description: JSON.parse(res.data.data.org_description),
-            rule: res.data.data.rule.split(",")
+            rule: res.data.data.rule.split(","),
+            rank: res.data.data.rank ? res.data.data.rank:[]
           })
+          console.log(self.data.rank)
         } else if (res.data.code == 401) {
           wx.navigateTo({
             url: '../login/login'

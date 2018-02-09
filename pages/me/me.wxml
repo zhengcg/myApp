@@ -6,7 +6,7 @@
     {{nickName}}
   </view>
   <view class='meTi'>
-      您还可以免费做3次活动
+      您还可以免费做{{count}}次活动
   </view>
   <view class='meTab clearfix'>
     <view bindtap='gotoOrder'>

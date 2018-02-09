@@ -5,7 +5,8 @@ var header = app.globalData.header;
 Page({
   data:{
     nickName:'',
-    avatarUrl:''
+    avatarUrl:'',
+    count:''
 
   },
   onLoad:function(options){
@@ -40,6 +41,7 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    this.getDetail()
   },
   onHide:function(){
     // 页面隐藏
@@ -80,6 +82,35 @@ Page({
   gotoPay: function () {
     wx.navigateTo({
       url: '../pay/pay'
+    })
+  },
+  getDetail(){
+    var self = this;
+    try {
+      wx.showLoading({
+        title: '加载中',
+      })
+    } catch (err) {
+      console.log("当前微信版本不支持")
+    }
+    wx.request({
+      url: api + 'seller_detail', //仅为示例，并非真实的接口地址
+      data: {
+        session_3rd: wx.getStorageSync('token')
+      },
+      method: 'GET',
+      success: function (res) {
+        try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
+        if (res.data.code == 200) {
+          self.setData({
+            count: res.data.data.free_count
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
+          })
+        }
+      }
     })
   }
 })

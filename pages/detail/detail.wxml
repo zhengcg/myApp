@@ -88,10 +88,10 @@
           <view class='td'>姓名</view>
           <view class='td'>目前价格</view>
         </view>
-        <view class='tr'>
-          <view class='td'>1</view>
-          <view class='td'>张三</view>
-          <view class='td'>128.00</view>
+        <view class='tr' wx:for="{{rank}}" wx:key="{{index}}">
+          <view class='td'>{{index+1}}</view>
+          <view class='td'>{{item.user.nickname}}</view>
+          <view class='td'>{{item.current_price}}</view>
         </view>
       </view>
     </view>
