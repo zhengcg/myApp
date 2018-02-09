@@ -3,8 +3,6 @@
 var app = getApp();
 var api=app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
-var user_id = app.globalData.user_id
 Page({
   data:{
     imgUrls:[],
@@ -101,13 +99,10 @@ Page({
             success: function () {
               wx.setStorageSync('token', res.data.data.session_3rd);
               wx.setStorageSync('user', res.data.data.user_id);
-              app.globalData.session_3rd = wx.getStorageSync('token')
-              app.globalData.user_id = wx.getStorageSync('user')
-              session_3rd = app.globalData.session_3rd;
-              user_id = app.globalData.user_id
               _this.getBanner();
               _this.getRegion();
               _this.getIndustry(); 
+              
 
             }
           })
@@ -153,9 +148,9 @@ Page({
   onShareAppMessage: function() {
     // 用户点击右上角分享
     return {
-      title: 'title', // 分享标题
-      desc: 'desc', // 分享描述
-      path: 'path' // 分享路径
+      title: '商家小屋', // 分享标题
+      desc: '商家小屋', // 分享描述
+      path: 'pages/index/index' // 分享路径
     }
   },
   changeRegion:function(e){
@@ -195,7 +190,7 @@ Page({
     wx.request({
       url: api + 'index_banner', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -205,6 +200,10 @@ Page({
             imgUrls: res.data.data.split(",")
           })
           
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
       }
     })
@@ -222,7 +221,7 @@ Page({
     wx.request({
       url: api + 'bargain_industry', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -231,6 +230,10 @@ Page({
           self.setData({
             industry: res.data.data,
             industry_id: res.data.data[self.data.industryIndex].id
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }
@@ -249,7 +252,7 @@ Page({
     wx.request({
       url: api + 'bargain_area', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -260,6 +263,10 @@ Page({
             area_id: res.data.data[self.data.regionIndex].area_id
           })
           self.getList(); 
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
       }
     })
@@ -283,7 +290,7 @@ Page({
         page: self.data.page,
         industry_id:self.data.industry_id,
         area_id: self.data.area_id,
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method:'GET',
       success: function (res) {
@@ -301,6 +308,10 @@ Page({
               duration: 2000
             })
           }
+        }else if(res.data.code==401){
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
       }
     })

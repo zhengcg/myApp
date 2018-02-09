@@ -1,7 +1,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -63,13 +62,6 @@ Page({
     this.getList()
     
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  },
   sendMsg:function(e){
     if (e.detail.value){
        this.setData({
@@ -101,7 +93,7 @@ Page({
         count: 10,
         page: self.data.page,
         key:self.data.keyWord,
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -119,6 +111,10 @@ Page({
               duration: 2000
             })
           }
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
       }
     })

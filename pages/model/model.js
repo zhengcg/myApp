@@ -2,7 +2,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -30,9 +29,9 @@ Page({
     rule: ["1.点击上方按钮“我要参加”参加活动。", "2.可以让朋友们一起帮忙减价。", "3.奖品份数有限，每个报名者支付后奖品就会减少一份，份数领完则无法继续报名，亲速度哦！","4.完成后，马上联系商家兑奖吧。"],
     org_description:[],
     need_info:["姓名","手机号码"],
-    get_time:'2018-09-10',
-    get_address:'瞎编一个提交试试',
-    get_phone:'18910232146',
+    get_time:'2018-01-01',
+    get_address:'',
+    get_phone:'',
     need1:'',
     need2:'',
     need3:''
@@ -89,7 +88,7 @@ Page({
           header: { "Content-Type": "multipart/form-data" },
           name: 'image',
           formData: {
-            session_3rd: encodeURI(session_3rd)
+            session_3rd: encodeURI(wx.getStorageSync('token'))
           },
           success: function (res) {
             var image = (JSON.parse(res.data)).data.image
@@ -123,7 +122,7 @@ Page({
           filePath: tempFilePaths[0],
           name: 'image',
           formData: {
-            session_3rd: encodeURI(session_3rd)
+            session_3rd: encodeURI(wx.getStorageSync('token'))
           },
           success: function (res) {
             var image = (JSON.parse(res.data)).data.image
@@ -289,7 +288,7 @@ Page({
           filePath: tempFilePaths[0],
           name: 'image',
           formData: {
-            session_3rd: session_3rd
+            session_3rd: wx.getStorageSync('token')
           },
           success:function(res){
             var image = (JSON.parse(res.data)).data.image
@@ -326,6 +325,21 @@ Page({
       endTime: e.detail.value
     })
   },
+  changeljDate(e) {
+    this.setData({
+      get_time: e.detail.value
+    })
+  },
+  ljAdress(e){
+    this.setData({
+      get_address: e.detail.value
+    })
+  },
+  ljPhone(e) {
+    this.setData({
+      get_phone: e.detail.value
+    })
+  },
   submitMsg(){
     var self = this;
     try {
@@ -339,7 +353,7 @@ Page({
       url: api + 'save_bargain', //仅为示例，并非真实的接口地址
       data: {
         bargain_id:self.data.id,
-        session_3rd: session_3rd,
+        session_3rd: wx.getStorageSync('token'),
         title:self.data.title,
         type:self.data.type,
         head_url:self.data.img,
@@ -374,6 +388,22 @@ Page({
             url: '../index/index'
           })
           
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
+          })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
         }
       }
     })
@@ -391,7 +421,7 @@ Page({
       url: api + 'bargain_detail', //仅为示例，并非真实的接口地址
       data: {
         bargain_id: id,
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -414,6 +444,10 @@ Page({
             get_address: res.data.data.get_address,
             get_phone: res.data.data.get_phone
             
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }

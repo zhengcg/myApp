@@ -16,8 +16,6 @@ App({
 
   globalData:{
     api: 'https://appdev.qigle.com/bargain/api/bargain/',
-    session_3rd: wx.getStorageSync('token')||'',
-    user_id: wx.getStorageSync('user')||'',
     header: {
       'content-type': 'application/json',
     }

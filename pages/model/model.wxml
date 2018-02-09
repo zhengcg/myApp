@@ -132,9 +132,22 @@
     <view class='modelHead'>领奖信息</view>
     <view class='modelBody'>
       <view class='b' style='margin-top:80rpx;color:#000;font-size:32rpx;'>
-        <view>领奖时间：</view>
-        <view>领奖地址：</view>
-        <view>领奖电话：</view>
+        <view style='line-height:80rpx;'>
+        <text style='float:left'>领奖时间：</text>
+         <picker mode="date"  value="{{get_time}}" start="{{newDate}}" end="2030-01-01" bindchange="changeljDate">
+          <view class="picker">
+            {{get_time}}
+          </view>
+        </picker>
+        </view>
+        <view style='line-height:80rpx;'>
+        <text style='float:left'>领奖地址：</text>
+        <input type='text' class='lj' placeholder='填写领奖地址' bindinput='ljAdress' value='{{get_address}}'></input>
+        </view>
+        <view style='line-height:80rpx;'>
+        <text style='float:left'>领奖电话：</text>
+        <input type='number' class='lj' placeholder='填写领奖电话' bindinput='ljPhone' value='{{get_phone}}'></input>
+        </view>
       </view>
     </view>
   </view>
@@ -154,7 +167,7 @@
             <view class="section" wx-if="{{isOrg}}">
                 <form bindsubmit="addOrgTextF">
                   <textarea placeholder="输入要添加的文字" name="textarea"/>
-                  <button form-type="submit"> 提交 </button>
+                  <button form-type="submit" class='subBtn' type='primary'> 提交 </button>
                 </form>
             </view>         
             <view style='margin-bottom:20rpx;' bindtap='addOrgText'>添加文字</view>

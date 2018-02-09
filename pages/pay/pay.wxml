@@ -1,6 +1,6 @@
 <view class='container'>
   <view class='textBox'>
-    <textarea placeholder="付费说明文字" />
+    <textarea placeholder="付费说明文字" bindinput='changeText'/>
   </view>
  <radio-group class="radio-group" bindchange="radioChange">
   <view class='label'>
@@ -8,21 +8,21 @@
       <label class="radio">
         <text>1次活动</text>
         <text class='p'>¥2.00</text>
-        <radio value="1" />
+        <radio value="2" />
       </label>
     </view>
     <view>
       <label class="radio">
         <text>8次活动</text>
         <text class='p'>¥20.00</text>
-        <radio value="2" />
+        <radio value="20" />
       </label>
     </view>
     <view>
       <label class="radio">
         <text>58次活动</text>
         <text class='p'>¥50.00</text>
-        <radio value="3"  checked='true'/>
+        <radio value="50"  checked='true'/>
       </label>
     </view>
   </view>
@@ -32,7 +32,7 @@
   </view>
   <view style='height:100rpx'></view>
   <view class='payBox'>
-  <text>合计：¥50</text>
+  <text>合计：¥{{price}}</text>
   <view>确认支付</view>
   </view>
   

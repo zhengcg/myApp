@@ -1,7 +1,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -68,13 +67,6 @@ Page({
     this.getList()
   
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   tabFn:function(e){
     this.setData({
       type: e.currentTarget.dataset.type,
@@ -120,7 +112,7 @@ Page({
         page: self.data.page,
         key: self.data.keyWord,
         type:self.data.type,
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -138,6 +130,10 @@ Page({
               duration: 2000
             })
           }
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
       }
     })
@@ -157,7 +153,7 @@ Page({
     wx.request({
       url: api + 'getqrcode', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: session_3rd,
+        session_3rd: wx.getStorageSync('token'),
         id: e.currentTarget.dataset.id
       },
       method: 'GET',
@@ -182,7 +178,7 @@ Page({
           wx.request({
             url: api + 'delete_bargain', //仅为示例，并非真实的接口地址
             data: {
-              session_3rd: session_3rd,
+              session_3rd: wx.getStorageSync('token'),
               id: e.currentTarget.dataset.id
             },
             method: 'GET',

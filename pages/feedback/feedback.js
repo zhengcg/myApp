@@ -1,7 +1,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -61,13 +60,6 @@ Page({
   onReachBottom: function () {
     
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  },
   phone: function (e) {
     this.setData({
       phone: e.detail.value
@@ -96,7 +88,7 @@ Page({
           
           phone: self.data.phone,
           
-          session_3rd: session_3rd
+          session_3rd: wx.getStorageSync('token')
         },
         // header: { "Content-Type": "application/x-www-form-urlencoded" },
         method: 'POST',
@@ -107,6 +99,10 @@ Page({
               title: '提交成功！',
               icon: 'success',
               duration: 2000
+            })
+          } else if (res.data.code == 401) {
+            wx.navigateTo({
+              url: '../login/login'
             })
           }
         }

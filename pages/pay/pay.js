@@ -1,10 +1,14 @@
-// pages/pay/pay.js
+var app = getApp();
+var api = app.globalData.api;
+var header = app.globalData.header;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    price:50,
+    text:''
   
   },
 
@@ -56,14 +60,14 @@ Page({
   onReachBottom: function () {
   
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      price: e.detail.value
+    })
+  },
+  changeText:function(e){
+    this.setData({
+      text: e.detail.value
+    })
   }
 })

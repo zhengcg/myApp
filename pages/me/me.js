@@ -2,7 +2,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
   data:{
     nickName:'',
@@ -15,7 +14,6 @@ Page({
   onReady:function(){
     // 页面渲染完成
     var self=this;
-    console.log(session_3rd)
     if (!wx.getStorageSync('nickName')) {
       wx.getUserInfo({
         success: function (res) {

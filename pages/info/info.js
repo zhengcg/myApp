@@ -2,7 +2,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -77,12 +76,6 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   checkboxChange:function(e){
     this.setData({
       check: e.detail.value.toString()
@@ -124,7 +117,7 @@ Page({
     wx.request({
       url: api + 'bargain_industry', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -132,6 +125,10 @@ Page({
         if (res.data.code == 200) {
           self.setData({
             industry: res.data.data
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }
@@ -150,7 +147,7 @@ Page({
     wx.request({
       url: api + 'bargain_area', //仅为示例，并非真实的接口地址
       data: {
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -158,6 +155,10 @@ Page({
         if (res.data.code == 200) {
           self.setData({
             region: res.data.data
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }
@@ -197,7 +198,7 @@ Page({
           name:self.data.name,
           phone:self.data.phone,
           code:self.data.code,
-          session_3rd: session_3rd
+          session_3rd: wx.getStorageSync('token')
         },
         // header: { "Content-Type": "application/x-www-form-urlencoded" },
         method: 'POST',
@@ -214,6 +215,10 @@ Page({
                   })
                 
               }
+            })
+          } else if (res.data.code == 401) {
+            wx.navigateTo({
+              url: '../login/login'
             })
           }else{
             wx.showToast({
@@ -244,7 +249,7 @@ Page({
         url: 'https://appdev.qigle.com/bargain/api/user_mp/sendcode/phone', //仅为示例，并非真实的接口地址
         data: {
           phone: self.data.phone,
-          session_3rd: session_3rd
+          session_3rd: wx.getStorageSync('token')
         },
         // header: { "Content-Type": "application/x-www-form-urlencoded" },
         method: 'GET',

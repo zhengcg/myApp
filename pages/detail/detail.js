@@ -2,7 +2,6 @@
 var app = getApp();
 var api = app.globalData.api;
 var header = app.globalData.header;
-var session_3rd = app.globalData.session_3rd;
 Page({
 
   /**
@@ -97,7 +96,7 @@ Page({
     var self=this;
     return {
       title: '商家小屋',
-      path: '/detail/detail?id='+self.data.id+'&type='+self.data.type,
+      path: '/pages/detail/detail?id='+self.data.id+'&type='+self.data.type,
       success: function (res) {
         // 转发成功
       },
@@ -182,10 +181,6 @@ Page({
             success: function () {
               wx.setStorageSync('token', res.data.data.session_3rd);
               wx.setStorageSync('user', res.data.data.user_id);
-              app.globalData.session_3rd = wx.getStorageSync('token')
-              app.globalData.user_id = wx.getStorageSync('user')
-              session_3rd = app.globalData.session_3rd;
-              user_id = app.globalData.user_id
               if (i == 1) {
                 _this.joinFn();
               } else {
@@ -228,7 +223,7 @@ Page({
       url: api + 'apply', //仅为示例，并非真实的接口地址
       data: {
         bargain_id: self.data.id,
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -238,6 +233,10 @@ Page({
             title: '参与成功！',
             icon: 'fail',
             duration: 2000
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }
@@ -258,7 +257,7 @@ Page({
       url: api + 'save_history', //仅为示例，并非真实的接口地址
       data: {
         apply_id: '',
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -268,6 +267,10 @@ Page({
             title: '帮朋友砍价成功！',
             icon: 'fail',
             duration: 2000
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }
@@ -287,7 +290,7 @@ Page({
       url: api + 'bargain_detail', //仅为示例，并非真实的接口地址
       data: {
         bargain_id:self.data.id,
-        session_3rd: session_3rd
+        session_3rd: wx.getStorageSync('token')
       },
       method: 'GET',
       success: function (res) {
@@ -299,6 +302,10 @@ Page({
             description: JSON.parse(res.data.data.description),
             org_description: JSON.parse(res.data.data.org_description),
             rule: res.data.data.rule.split(",")
+          })
+        } else if (res.data.code == 401) {
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }

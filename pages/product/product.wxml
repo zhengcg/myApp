@@ -11,7 +11,7 @@
    <view style='height:140rpx;'></view>
   <view class='proBox clearfix'>
   <view class='proList'>
-    <view><image src="../../images/my-head.png"/></view>
+    <view><image src="https://appdev.qigle.com/bargain/upload/20180209/4672a5b459e8db35f6993a2a0c98305b.png"/></view>
     <view class='tit clearfix'><text>砍价（普通）</text><view>多风格型</view></view>
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
@@ -20,7 +20,7 @@
     <button type="primary" class='primaryBtn btn' bindtap='gotoModel' data-type='1'>马上制作</button>
   </view>
   <view class='proList'>
-    <view><image src="../../images/my-head.png"/></view>
+    <view><image src="https://appdev.qigle.com/bargain/upload/20180209/1adf21d4a9ee7f9d094a7acc0760676b.png"/></view>
     <view class='tit clearfix'><text>砍价（春节）</text><view>多风格型</view></view>
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
@@ -29,7 +29,7 @@
     <button type="primary" class='primaryBtn btn' bindtap='gotoModel' data-type='2'>马上制作</button>
   </view>
   <view class='proList'>
-    <view><image src="../../images/my-head.png"/></view>
+    <view><image src="https://appdev.qigle.com/bargain/upload/20180209/429a6062202133113d6d431c0d666a6d.png"/></view>
     <view class='tit clearfix'><text>砍价（美容）</text><view>多风格型</view></view>
     <view class='con'>
     第三方水电费单身狗电饭锅地方电话回访法规和法国和法规和东方闪电过分的话和法规和发过火挂号费交话费梵蒂冈梵蒂冈梵蒂冈
