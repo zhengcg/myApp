@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    apply_id:'',
     id:'',
     type:'',
     typeClass:'type1',
@@ -51,7 +52,8 @@ Page({
         typeClass: 'type3'
       })
     }
-    this.getDetail();
+    this.checkToken()
+
   
   },
 
@@ -108,34 +110,30 @@ Page({
 
   },
   wcy(){
-    this.checkToken(1)
+    this.joinFn();
   },
   bkj(){
-    this.checkToken(2)
+    this.helpCut();
   },
-  checkToken: function (i) {
+  checkToken: function () {
     var _this = this;
     wx.checkSession({
       success: function () {
         if (!wx.getStorageSync('token')) {
-          _this.registerFn(i)
+          _this.registerFn()
         } else {
-          if(i==1){
-            _this.joinFn();
-          }else{
-            _this.helpCut();
-          }
+          _this.getDetail();
           
 
         }
       },
       fail: function () {
-        _this.registerFn(i)
+        _this.registerFn()
       }
     })
 
   },
-  registerFn: function (i) {
+  registerFn: function () {
     var _this = this;
     try {
       wx.showLoading({
@@ -149,7 +147,7 @@ Page({
     wx.login({
       success: function (res) {
         if (res.code) {
-          _this.sendLogin(res.code,i)
+          _this.sendLogin(res.code)
 
         } else {
           try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
@@ -163,7 +161,7 @@ Page({
       }
     });
   },
-  sendLogin: function (code,i) {
+  sendLogin: function (code) {
     //发起网络请求
     var _this = this;
     wx.request({
@@ -182,11 +180,7 @@ Page({
             success: function () {
               wx.setStorageSync('token', res.data.data.session_3rd);
               wx.setStorageSync('user', res.data.data.user_id);
-              if (i == 1) {
-                _this.joinFn();
-              } else {
-                _this.helpCut();
-              }
+              this.getDetail();
 
             }
           })
@@ -230,6 +224,9 @@ Page({
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
+          self.setData({
+            apply_id:res.data.data.apply_id
+          })
           wx.showToast({
             title: '参与成功！',
             icon: 'fail',
@@ -257,7 +254,7 @@ Page({
     wx.request({
       url: api + 'save_history', //仅为示例，并非真实的接口地址
       data: {
-        apply_id: '',
+        apply_id: self.data.apply_id,
         session_3rd: wx.getStorageSync('token')
       },
       method: 'POST',
@@ -272,6 +269,12 @@ Page({
         } else if (res.data.code == 401) {
           wx.navigateTo({
             url: '../login/login'
+          })
+        }else{
+          wx.showToast({
+            title: '不能重复砍价！',
+            icon: 'fail',
+            duration: 2000
           })
         }
       }
@@ -305,7 +308,6 @@ Page({
             rule: res.data.data.rule.split(","),
             rank: res.data.data.rank ? res.data.data.rank:[]
           })
-          console.log(self.data.rank)
         } else if (res.data.code == 401) {
           wx.navigateTo({
             url: '../login/login'
