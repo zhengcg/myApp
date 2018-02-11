@@ -113,7 +113,16 @@ Page({
     this.joinFn();
   },
   bkj(){
-    this.helpCut();
+    if(this.data.apply_id){
+      this.helpCut();
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '要先参加活动才可以帮朋友砍价',
+        showCancel: false
+      })
+    }
+    
   },
   checkToken: function () {
     var _this = this;
@@ -244,6 +253,7 @@ Page({
   },
   helpCut(){
     var self = this;
+
     try {
       wx.showLoading({
         title: '加载中',

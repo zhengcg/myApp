@@ -4,25 +4,11 @@
   </view>
  <radio-group class="radio-group" bindchange="radioChange">
   <view class='label'>
-    <view>
+    <view wx:for="{{list}}" wx:key="{{item.id}}">
       <label class="radio">
-        <text>1次活动</text>
-        <text class='p'>¥2.00</text>
-        <radio value="2" />
-      </label>
-    </view>
-    <view>
-      <label class="radio">
-        <text>8次活动</text>
-        <text class='p'>¥20.00</text>
-        <radio value="20" />
-      </label>
-    </view>
-    <view>
-      <label class="radio">
-        <text>58次活动</text>
-        <text class='p'>¥50.00</text>
-        <radio value="50"  checked='true'/>
+        <text>{{item.title}}</text>
+        <text class='p'>¥{{item.amount}}</text>
+        <radio value="{{index}}" />
       </label>
     </view>
   </view>
@@ -33,7 +19,7 @@
   <view style='height:100rpx'></view>
   <view class='payBox'>
   <text>合计：¥{{price}}</text>
-  <view>确认支付</view>
+  <view bindtap='payFn'>确认支付</view>
   </view>
   
 </view>
