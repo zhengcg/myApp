@@ -376,17 +376,19 @@ Page({
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
-          
+          console.log("购买成功了呀！")
           wx.showToast({
             title: "提交成功",
             icon: 'success',
-            duration: 2000
-
-
+            duration: 2000,
+            success:function(){
+              console.log("接口调用成功！")
+              wx.navigateTo({
+                url: '../index/index'
+              })
+            }
           })
-          wx.navigateTo({
-            url: '../index/index'
-          })
+          
           
         } else if (res.data.code == 401) {
           wx.navigateTo({
