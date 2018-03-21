@@ -346,7 +346,7 @@ background-size: 330rpx 94rpx;
 }
 .footer>view{
   float: left;
-  width: 320rpx;
+  width: 640rpx;
   margin-top: 40rpx;
   height: 74rpx;
   line-height: 74rpx;
@@ -357,7 +357,7 @@ background-size: 330rpx 94rpx;
 
 }
 .footer>view:last-of-type{
-  margin-left: 30rpx;
+  /* margin-left: 30rpx; */
   background: red;
   color: #fff;
 }

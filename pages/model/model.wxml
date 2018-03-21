@@ -260,7 +260,7 @@
   </view> -->
 
   <view class='footer clearfix'>
-    <view>预览活动</view>
+    <!-- <view>预览活动</view> -->
     <view bindtap='submitMsg'>发布活动</view>
   </view>
 
