@@ -91,7 +91,7 @@
   font-size: 50rpx;
   color: #fff;
   width: 684rpx;
-  height: 228rpx;
+  /* height: 228rpx; */
   border: 2rpx dotted #fff;
   box-sizing: border-box;
   margin: 32rpx auto;

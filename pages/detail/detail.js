@@ -98,7 +98,7 @@ Page({
   onShareAppMessage: function () {
     var self=this;
     return {
-      title: '商家小屋',
+      title: self.data.info.title,
       path: '/pages/detail/detail?id='+self.data.id+'&type='+self.data.type,
       success: function (res) {
         // 转发成功

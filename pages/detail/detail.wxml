@@ -2,7 +2,7 @@
   <view class='topM'>
     <view class='box' bindtap='chooseImg'>
       <view class='modelImg'>
-        <image src='{{info.head_url}}'/>
+        <image src='{{info.head_url}}' mode='heighFix'/>
       </view>
     </view>
     <view class='det1 clearfix'>
@@ -14,15 +14,16 @@
       <view class='btn2' bindtap='bkj'></view>
     </view>
   </view>
+  <view class='det2'>
+  <button open-type="share"></button>
+  </view>
 
   <view class='titBox'>
     <view>{{info.title}}</view>
     <view style='font-size:28rpx;margin-top:40rpx;'>活动时间：{{info.start_time}}-{{info.end_time}}</view>
   </view>
 
-  <view class='det2'>
-  <button open-type="share"></button>
-  </view>
+  
   
 
   <view class='modelBox'>

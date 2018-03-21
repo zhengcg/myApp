@@ -15,7 +15,7 @@
   </view>
 
   <view class='titBox'>
-  <textarea value='{{title}}' placeholder="请输入活动主题"  bindinput="changeTitle" style='height:150rpx;' placeholder-style='color:#fff'/>
+  <textarea value='{{title}}' placeholder="请输入活动主题，活动宣传语吸引客户关键，最多28个字"  bindinput="changeTitle" style='height:150rpx;' placeholder-style='color:#fff'/>
   </view>
 
   <view class='dateBox'>
