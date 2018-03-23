@@ -150,6 +150,7 @@ Page({
   },
   openCode:function(e){
     var self=this;
+    // https://www.w3cschool.cn/weixinapp/weixinapp-api-qrcode.html
     wx.request({
       url: api + 'getqrcode', //仅为示例，并非真实的接口地址
       data: {
