@@ -2,7 +2,7 @@
   <view class='topM'>
     <view class='box' bindtap='chooseImg'>
       <view class='modelImg'>
-        <image src='{{info.head_url}}' mode='heighFix'/>
+        <image src='{{info.head_url}}' mode='aspectFit'/>
       </view>
     </view>
     <view class='det1 clearfix'>
@@ -35,7 +35,7 @@
       </view>
       <view class='b' wx:for="{{description}}" wx:key="{{index}}">
         <view wx-if="{{item.src}}">
-          <image src='{{item.src}}'/>
+          <image src='{{item.src}}' mode='widthFix'/>
         </view> 
         <text wx-if="{{!item.src}}" style='color:#000;font-size:24rpx;'>{{item}}</text>
       </view>
@@ -70,7 +70,7 @@
     <view class='modelBody' style='padding-top:80rpx;'>
       <view class='b' wx:for="{{org_description}}" wx:key="{{index}}">
         <view wx-if="{{item.src}}">
-          <image src='{{item.src}}'/>
+          <image src='{{item.src}}' mode='widthFix'/>
         </view> 
         <text wx-if="{{!item.src}}" style='color:#000;font-size:24rpx;'>{{item}}</text>
       </view>    
@@ -98,4 +98,9 @@
     </view>
   </view>
   <view style='height:100rpx;'></view>
+  <view class='footerNav'>
+    <view class='nav nav1' bindtap='gotoIndex'>首页</view>
+    <view class='nav nav2' bindtap='gotoPro'>制作中心</view>
+    <view class='nav nav3' bindtap='gotoMe'>用户中心</view>
+  </view>
 </view>

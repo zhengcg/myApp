@@ -20,7 +20,7 @@
       <text wx-if='{{item.process_status==3}}'>已结束</text>
     </view>
     <view class='orderBody'>
-      <image src="{{item.head_url}}"/>
+      <image src="{{item.head_url}}" mode='aspectFill'/>
     </view>
     <view class='orderFoot'>
       <text class='f1' catchtap='gotoTable' data-id="{{item.id}}">报名表</text>

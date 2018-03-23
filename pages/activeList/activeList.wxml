@@ -20,7 +20,7 @@
       <text wx-if='{{item.bargain.process_status==3}}'>已结束</text>
     </view>
     <view class='orderBody'>
-      <image src="{{item.bargain.head_url}}"/>
+      <image src="{{item.bargain.head_url}}" mode='aspectFill'/>
     </view>
     <view class='orderFoot clearfix'>
       <text class='fl' catchtap='showDui' data-index="{{index}}">去兑换</text>

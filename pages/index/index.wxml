@@ -11,7 +11,7 @@
       <swiper autoplay="true" >
         <block wx:for="{{imgUrls}}" wx:key="1">
           <swiper-item>
-            <image src="{{item}}" class="slide-image" width="375" height="110"/>
+            <image src="{{item}}" class="slide-image" mode='aspectFit'/>
           </swiper-item>
         </block>
       </swiper>
@@ -39,7 +39,7 @@
     <scroll-view scroll-y="true">
       <view class='cardBox'  wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap='gotoDetail'>
         <view class='cardTitle'>{{item.title}}</view>
-        <view class='cardBody'><image src="{{item.head_url}}"/></view>
+        <view class='cardBody'><image src="{{item.head_url}}" mode='aspectFill'/></view>
         <view class='cardFoot'><view>曝光次数：<text>{{item.show}}</text></view><view>报名人次：<text>{{item.apply}}</text></view></view>
       </view>
     </scroll-view>

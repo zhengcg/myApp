@@ -291,6 +291,24 @@ Page({
     })
 
   },
+  gotoIndex: function (e) {
+    wx.switchTab({
+      url: '../index/index'
+    })
+
+  },
+  gotoPro: function (e) {
+    wx.switchTab({
+      url: '../product/product'
+    })
+
+  },
+  gotoMe: function (e) {
+    wx.switchTab({
+      url: '../me/me'
+    })
+
+  },
   getDetail:function(){
     var self = this;
     try {
