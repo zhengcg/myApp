@@ -14,7 +14,7 @@
       <view class='btn2' bindtap='bkj'></view>
     </view>
   </view>
-  <view class='det2'>
+  <view class='det2' hidden='{{!apply_id}}'>
   <button open-type="share"></button>
   </view>
 

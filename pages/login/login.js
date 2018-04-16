@@ -56,7 +56,7 @@ Page({
     wx.login({
       success: function (res) {
         if (res.code) {
-          _this.sendLogin(res.code)
+          _this.getUserInfo(res.code)
 
         } else {
           try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
@@ -70,15 +70,13 @@ Page({
       }
     });
   },
-  sendLogin: function (code) {
+  sendLogin: function (obj) {
     //发起网络请求
     var _this = this;
     wx.request({
       url: "https://appdev.qigle.com/bargain/api/user_mp/login",
-      method: 'GET',
-      data: {
-        code: code
-      },
+      method: 'POST',
+      data: obj,
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
@@ -115,6 +113,26 @@ Page({
       }
     })
 
+  },
+  getUserInfo: function (code) {
+    var _this = this;
+    wx.getUserInfo({
+      withCredentials: true,
+      lang: "zh_CN",
+      success: function (res) {
+        var sendData = {
+          "code": code,
+          "nickName": res.userInfo.nickName,
+          "gender": res.userInfo.gender,
+          "avatarUrl": res.userInfo.avatarUrl,
+          "province": res.userInfo.province,
+          "city": res.userInfo.city,
+          "county": res.userInfo.county
+        }
+        _this.sendLogin(sendData)
+
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

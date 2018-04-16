@@ -28,6 +28,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.apply_id){
+      this.setData({
+        apply_id: options.apply_id
+      })
+    }
     this.setData({
       id:options.id,
       type:options.type
@@ -99,7 +104,7 @@ Page({
     var self=this;
     return {
       title: self.data.info.title,
-      path: '/pages/detail/detail?id='+self.data.id+'&type='+self.data.type,
+      path: '/pages/detail/detail?id=' + self.data.id + '&type=' + self.data.type + '&apply_id=' + self.data.apply_id,
       success: function (res) {
         // 转发成功
       },
@@ -245,6 +250,13 @@ Page({
           wx.navigateTo({
             url: '../login/login'
           })
+        }else{
+          wx.showToast({
+            title: '已经参加！',
+            icon: 'fail',
+            duration: 2000
+          })
+
         }
       }
     })
@@ -271,10 +283,14 @@ Page({
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
+
           wx.showToast({
             title: '帮朋友砍价成功！',
             icon: 'fail',
-            duration: 2000
+            duration: 2000,
+            success:function(){
+              self.getDetail();
+            }
           })
         } else if (res.data.code == 401) {
           wx.navigateTo({
@@ -309,6 +325,23 @@ Page({
     })
 
   },
+  fmtDate(timeStamp){
+    var date = new Date();
+    date.setTime(timeStamp * 1000);
+    var y = date.getFullYear();
+    var m = date.getMonth() + 1;
+    m = m < 10 ? ('0' + m) : m;
+    var d = date.getDate();
+    d = d < 10 ? ('0' + d) : d;
+    // var h = date.getHours();
+    // h = h < 10 ? ('0' + h) : h;
+    // var minute = date.getMinutes();
+    // var second = date.getSeconds();
+    // minute = minute < 10 ? ('0' + minute) : minute;
+    // second = second < 10 ? ('0' + second) : second;
+    return y + '-' + m + '-' + d;    
+
+  },
   getDetail:function(){
     var self = this;
     try {
@@ -328,6 +361,7 @@ Page({
       success: function (res) {
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
+          res.data.data.get_time = self.fmtDate(res.data.data.get_time)
           self.setData({
             info:res.data.data,
             type: res.data.data.type,
