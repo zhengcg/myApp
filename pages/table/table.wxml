@@ -3,15 +3,15 @@
   <view class="table">
     <view class="thead">
       <view class="th">姓名</view>
-      <view class="th">手机号</view>
+      <!-- <view class="th">手机号</view> -->
       <view class="th">价格</view>
       <view class="th">帮砍人数</view>
     </view>
     <view class="tr" wx:for="{{list}}" wx:key="{{item.id}}">
-      <view class="td">{{}}</view>
-      <view class="td">{{}}</view>
-      <view class="td">{{}}</view>
-      <view class="td">{{}}</view>
+      <view class="td">{{item.nickName}}</view>
+      <!-- <view class="td">{{}}</view> -->
+      <view class="td">{{item.current_price}}</view>
+      <view class="td">{{item.history_count}}</view>
     </view>
   </view>
   </scroll-view>

@@ -12,7 +12,8 @@ Page({
     page: 1,
     keyWord: '',
     type:1,
-    codeImg:''
+    codeImg:'',
+    scene:""
 
   
   },
@@ -21,6 +22,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var scene = decodeURIComponent(options.scene);
+    this.setData({
+      scene:scene
+    })
   
   },
 
@@ -155,7 +160,8 @@ Page({
       url: api + 'getqrcode', //仅为示例，并非真实的接口地址
       data: {
         session_3rd: wx.getStorageSync('token'),
-        id: e.currentTarget.dataset.id
+        path: "pages/detail/detail",
+        scene:e.currentTarget.dataset.id+"," + e.currentTarget.dataset.type
       },
       method: 'GET',
       success: function (res) {
@@ -198,6 +204,20 @@ Page({
       }
     })
    
+  },
+  saveImg:function(e){
+    var self=this;
+    wx.saveImageToPhotosAlbum({
+      filePath: self.data.codeImg,
+      success:function(res){
+        wx.showToast({
+          title: '以保存到相册',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+
   },
   gotoDetail: function (e) {
     wx.navigateTo({

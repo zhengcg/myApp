@@ -9,12 +9,8 @@
     "pages/pay/pay",
     "pages/me/me",
     "pages/feedback/feedback",
-    
-    
-    
     "pages/table/table",
     "pages/agreement/agreement",
-    
     "pages/static/static",
     "pages/activeList/activeList",
     "pages/info/info",
@@ -22,10 +18,7 @@
     "pages/getStart/getStart",
     "pages/problem/problem",
     "pages/raiders/raiders",
-    
     "pages/search/search"
-    
-    
   ],
   "window":{
     "navigationBarBackgroundColor": "#FF6262",

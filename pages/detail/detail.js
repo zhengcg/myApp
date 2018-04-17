@@ -33,10 +33,23 @@ Page({
         apply_id: options.apply_id
       })
     }
-    this.setData({
-      id:options.id,
-      type:options.type
-    })
+    
+    if (options.scene){
+      var scene = decodeURIComponent(options.scene);
+      var arr=scene.split(",")
+      this.setData({
+        id: arr[0],
+        type: arr[1]
+      })
+
+    }else{
+      this.setData({
+        id: options.id,
+        type: options.type
+      })
+
+    }
+    
   
   },
 
