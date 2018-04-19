@@ -6,7 +6,8 @@ Page({
   data:{
     nickName:'',
     avatarUrl:'',
-    count:''
+    count:0,
+    sCount:0
 
   },
   onLoad:function(options){
@@ -103,7 +104,8 @@ Page({
         try { wx.hideLoading() } catch (err) { console.log("当前微信版本不支持") }
         if (res.data.code == 200) {
           self.setData({
-            count: res.data.data.free_count
+            count: res.data.data.free_count,
+            sCount:res.data.data.count
           })
         } else if (res.data.code == 401) {
           wx.navigateTo({

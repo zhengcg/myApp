@@ -384,8 +384,9 @@ Page({
             success:function(){
               console.log("接口调用成功！")
               wx.navigateTo({
-                url: '../index/index'
+                url: '../order/order'
               })
+              
             }
           })
           

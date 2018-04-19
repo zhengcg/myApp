@@ -28,6 +28,7 @@
       <text class='f3' catchtap='openCode' data-id="{{item.id}}" data-type="{{item.type}}">活动二维码</text>
       <text class='f4' catchtap='delete' data-id="{{item.id}}" data-index="{{index}}">删除活动</text>
     </view>
+   
   </view>
   </scroll-view>
 
